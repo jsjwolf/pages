@@ -5,6 +5,11 @@ server_port: 4000
 baseurl:    /pages
 url: http://localhost:4000
 
+blogname: GoodBai
+weibo: 
+copywrite: "===============================================
+                       Power By Github Pages."
+
 source:      .
 destination: ./_site
 plugins:     ./_plugins
