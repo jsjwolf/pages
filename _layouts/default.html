@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>
+       {% if page.title %} {{ page.title }} | {% endif %} 
+    </title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <header>
+        <h1>
+          <a href="{{site.baseurl }}/index.html"> {{ site.blogname }} </a>
+        </h1>
+        <header>
+          {{ content }}
+ 
+    </div>
+    {{ site.copywrite }}  
+  </body>
+
+</html>
