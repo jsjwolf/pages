@@ -1,0 +1,35 @@
+
+body {
+  max-width: 46em;
+	margin: 1.5em auto 3em auto;
+	line-height:1.5em;
+
+
+        
+}
+
+#page, #disqus_thread {
+	background: white;
+/*	background-image: url(grid.png); */
+        padding: 3em 3em 1.5em 3em;	
+	border: 1px solid #ccc;
+}
+
+/* More experimental CSS3 features */
+#page, #disqus_thread {
+	box-shadow: 2px 2px 8px #aaa;
+	-webkit-box-shadow: 2px 2px 8px #aaa;
+	-moz-box-shadow: 2px 2px 8px #aaa;	
+}
+
+#disqus_thread { padding-top: 0; }
+
+/* TODO
+#page { counter-reset: section; }
+#page h2:before {
+	margin-left: -3.5ex;
+	color: silver;
+	content: "§" counter(section) ". ";
+	counter-increment: section 2;
+}
+*/
