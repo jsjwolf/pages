@@ -7,8 +7,6 @@ url: http://goodbai.com
 
 blogname: GoodBai
 weibo: 
-copywrite: "===============================================
-                       Power By Github Pages."
 
 source:      .
 destination: ./_site
