@@ -1,11 +1,18 @@
 ---
 layout: default
+keyword: goodbai
 title: Goodbai Blog
 ---
-　　<p>最新文章</p>
+　　<h1>最新文章</h1>
+ <div id="bloglist" class="bloglist">
 　　<ul>
 　　　　{% for post in site.posts %}
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+        {% if post.published %} 
+　　　　　　<li><h2><span class="blog_title_date"> {{ post.date | date_to_string }}</span>
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2></li>
+	    <div class="bolg_desc"><p>{{ post.description }}</p></div>
+　　　　{% endif %}
 　　　　{% endfor %}
 　　</ul>
+</div>
 　　
