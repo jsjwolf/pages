@@ -30,24 +30,27 @@ body {
 }
 #header{
 	width:800px;
-	margin: 2em; 
+	margin-top: 2em;
+	margin-left: 1em;
+	font-size:1.3em;
 }
 
-#header  li { display: inline }
 #header a:hover {
         text-decoration:none;
 	color: white;
 }
 #header a { color: black;}
 #header li {
-	font-size:1.1em;
-	padding: 0.6em;
+	display: inline;
+	padding: 0.1em;
+/*
 	background: url(/images/umi_from_gray.gif);
 	box-shadow: 0px 0px 1px gray;
+/*
 	
 }
 #header .topitem:hover {
-	background: url(/images/umi_from_green.gif);
+	/*background: url(/images/umi_from_green.gif);*/
 }
 #header_searchbox {
 	font-size: 50%;
