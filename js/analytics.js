@@ -1,7 +1,7 @@
-/*
- *google analytics
- */
 
+/*
+ *baidu tongji
+ */
 
 var _hmt = _hmt || [];
 (function() {
@@ -11,6 +11,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 
+/*
+ *google analytics
+ */
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,8 +24,3 @@ var _hmt = _hmt || [];
   ga('send', 'pageview');
 
 
-/*
- *baidu tongji
- */
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb256a515de4d09a354567784cc5163ac' type='text/javascript'%3E%3C/script%3E"));
