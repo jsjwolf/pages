@@ -7,18 +7,18 @@ a:hover { text-decoration:underline;}
 a:active {text-decoration:underline;}
 a {text-decoration:none;}
 
-h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
-h1 {font-size:1.2em;line-height:1;margin-bottom:0.5em;}
-h2 {font-size:1.15em;margin-bottom:0.75em;}
-h3 {font-size:1.1em;line-height:1;margin-bottom:1em;}
-h4 {font-size:1.05em;line-height:1.25;margin-bottom:1.25em;}
-h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
-h6 {font-size:1em;font-weight:bold;}
+h1, h2, h3, h4, h5, h6 {font-weight:bolder;color:#111;}
+h1 {font-size:1.5em;margin:1.2em;}
+h2 {font-size:1.4em;margin:1.1em;}
+h3 {font-size:1.3em;margin:1.0em;}
+h4 {font-size:1.2em;margin:0.80em;}
+h5 {font-size:1.1em;margin:0.75em;}
+h6 {font-size:1.0em;margin:0.70em;}
 
 body {
 	repeat-x;
-	line-height: 1.6em;
-        font-size:90%;
+	line-height: 200%;
+        font-size:100%;
 	font-family: Palatino, georgia, "times new roman", "宋体";
 	background-color: rgb(223, 230, 222);
 }
@@ -73,7 +73,7 @@ body {
 }
 /* 其他配置 */
 #disqus_thread {
-	margin-top: 2em;
+	margin-top: 6em;
 }
 
 .blog_title_date {
@@ -85,6 +85,15 @@ body {
 	color: gray;
 }
 
+li{
+	margin-left: 3em;
+	list-style: disc;
+	font-size: 95%;
+	line-height: 170%;
+}
 
-
+ul{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
 
