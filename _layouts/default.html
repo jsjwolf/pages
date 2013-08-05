@@ -22,6 +22,8 @@
     </div>
 
     <div id="main">
+        <h1>{% if page.title %}{{ page.title }} | {% endif %}</h1>
+	 <p>{{ page.description }}</p>
           {{ content }}
     </div>
 
