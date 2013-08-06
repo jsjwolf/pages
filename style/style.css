@@ -1,4 +1,17 @@
 /*全局配置*/
+/*自适应屏幕*/
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+img, object { max-width: 100%;}
+/*  手持设备时启用  */
+@media screen and (max-device-width: 600px) {
+	#page{
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -29,7 +42,6 @@ body {
 	margin-right: auto;
 }
 #header{
-	width:800px;
 	margin-top: 2em;
 	margin-left: 1em;
 	font-size:1.3em;
@@ -85,14 +97,14 @@ body {
 	color: gray;
 }
 
-li{
+#main li{
 	margin-left: 3em;
 	list-style: disc;
 	font-size: 95%;
 	line-height: 170%;
 }
 
-ul{
+#main ul{
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
