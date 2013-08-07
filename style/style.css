@@ -3,6 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 img, object { max-width: 100%;}
 /*  手持设备时启用  */
+/*
 @media screen and (max-device-width: 600px) {
 	#page{
 		width: auto;
@@ -11,6 +12,7 @@ img, object { max-width: 100%;}
 	}
 	
 }
+*/
 
 * {
 	padding: 0;
@@ -88,6 +90,7 @@ body {
 	margin-top: 6em;
 }
 
+/* 首页博文日期和描述段格式*/
 .blog_title_date {
 	font-size: 90%;
 	color: gray;
@@ -96,7 +99,7 @@ body {
 	padding-left: 1em;
 	color: gray;
 }
-
+/*配置正文中列表的css*/
 #main li{
 	margin-left: 3em;
 	list-style: disc;
@@ -109,3 +112,9 @@ body {
 	margin-bottom: 1em;
 }
 
+pre {
+	margin: 0.5em auto 0.5em 0;
+	padding: 0 0.5em 0 0.5em;
+	border: 1px solid #CCCCCC;
+	line-height: 180%;
+}
