@@ -1,8 +1,12 @@
 ---
 layout: page
 ---
+<div id="post">
+	<h1>{% if page.title %}{{ page.title }} | {% endif %}</h1>
+	<p>{{ page.description }}</p>
 
-{{ content }}  
+	{{ content }}  
+</div>
 <!--script>
 	codes = document.getElementsByTagName("pre");
 	codes[0].className = 'prettyprint linenums';

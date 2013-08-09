@@ -1,0 +1,88 @@
+/*全局配置*/
+* {
+	padding: 0;
+	margin: 0;
+}
+a:hover { text-decoration:underline;}
+a:active {text-decoration:underline;}
+a {text-decoration:none;}
+
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+h1 {font-size:1.2em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:1.15em;margin-bottom:0.75em;}
+h3 {font-size:1.1em;line-height:1;margin-bottom:1em;}
+h4 {font-size:1.05em;line-height:1.25;margin-bottom:1.25em;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+
+body {
+	repeat-x;
+	line-height: 1.6em;
+        font-size:90%;
+	font-family: Palatino, georgia, "times new roman", "宋体";
+	background-color: rgb(223, 230, 222);
+}
+/**page 页面包含header/main/footer*/
+#page{
+	margin-left: auto;
+	margin-right: auto;
+}
+#header{
+	margin-top: 2em;
+	margin-left: 1em;
+	font-size:1.3em;
+}
+
+#header a:hover {
+        text-decoration:none;
+	color: white;
+}
+#header a { color: black;}
+#header li {
+	display: inline;
+	padding: 0.1em;
+/*
+	background: url(/images/umi_from_gray.gif);
+	box-shadow: 0px 0px 1px gray;
+/*
+	
+}
+#header .topitem:hover {
+	/*background: url(/images/umi_from_green.gif);*/
+}
+#header_searchbox {
+	font-size: 50%;
+	width:150px;
+}
+#main {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	padding: 2em 6.5% 2em 6.5%; 
+	margin: 0px 0px 0px 0px;                 
+/*	box-shadow: 2px 2px 10px #aaa;
+*/
+}
+#main a:link { color: blue;}
+#main a:visited{ color: red;}
+
+#footer{
+	color: gray;
+	font-size: 80%;
+}
+/* 其他配置 */
+#disqus_thread {
+	margin-top: 2em;
+}
+
+.blog_title_date {
+	font-size: 90%;
+	color: gray;
+}
+.bolg_desc {
+	padding-left: 1em;
+	color: gray;
+}
+
+
+
+

@@ -22,31 +22,33 @@ a:hover { text-decoration:underline;}
 a:active {text-decoration:underline;}
 a {text-decoration:none;}
 
-h1, h2, h3, h4, h5, h6 {font-weight:bolder;color:#111;}
-h1 {font-size:1.5em;margin:1.2em;}
-h2 {font-size:1.4em;margin:1.1em;}
-h3 {font-size:1.3em;margin:1.0em;}
-h4 {font-size:1.2em;margin:0.80em;}
-h5 {font-size:1.1em;margin:0.75em;}
-h6 {font-size:1.0em;margin:0.70em;}
+h1, h2, h3, h4, h5, h6 {font-weight:bolder;}
+h1 {font-size:1.5em;margin-top:1.2em;margin-bottom:1.2em;}
+h2 {font-size:1.4em;margin-top:1.1em;margin-bottom:1.1em;}
+h3 {font-size:1.3em;margin-top:1.0em;margin-bottom:1.0em;}
+h4 {font-size:1.2em;margin-top:0.9em;margin-bottom:0.9em;}
+h5 {font-size:1.1em;margin-top:0.8em;margin-bottom:0.8em;}
+h6 {font-size:1.0em;margin-top:0.7em;margin-bottom:0.7em;}
 
 body {
 	repeat-x;
 	line-height: 200%;
         font-size:100%;
 	font-family: Palatino, georgia, "times new roman", "宋体";
-	background-color: rgb(223, 230, 222);
+	background-color: rgb(178, 221, 202);
 }
 /**page 页面包含header/main/footer*/
 #page{
+/*
 	width: 800px;
+*/
 	margin-left: auto;
 	margin-right: auto;
 }
 #header{
 	margin-top: 2em;
-	margin-left: 1em;
 	font-size:1.3em;
+	padding-left: 6.5%;
 }
 
 #header a:hover {
@@ -56,7 +58,7 @@ body {
 #header a { color: black;}
 #header li {
 	display: inline;
-	padding: 0.1em;
+	margin-right: 0.5em;
 /*
 	background: url(/images/umi_from_gray.gif);
 	box-shadow: 0px 0px 1px gray;
@@ -73,20 +75,32 @@ body {
 #main {
 	background-color: #FFFFFF;
 	border: 1px solid #CCCCCC;
-	padding: 2em 6.5% 2em 6.5%; 
-	margin: 0px 0px 0px 0px;                 
+	padding: 2em 30% 2em 5%; 
+	margin: 0 0 0 0;                 
 /*	box-shadow: 2px 2px 10px #aaa;
 */
 }
 #main a:link { color: blue;}
 #main a:visited{ color: red;}
+/*post类,配置正文中列表的css*/
+#main li{
+	margin-left: 3em;
+	list-style: disc;
+	line-height: 170%;
+}
+
+#main ul{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
 
 #footer{
 	color: gray;
 	font-size: 80%;
+	padding-left: 6.5%;
 }
 /* 其他配置 */
-#disqus_thread {
+#comment {
 	margin-top: 6em;
 }
 
@@ -98,18 +112,6 @@ body {
 .bolg_desc {
 	padding-left: 1em;
 	color: gray;
-}
-/*配置正文中列表的css*/
-#main li{
-	margin-left: 3em;
-	list-style: disc;
-	font-size: 95%;
-	line-height: 170%;
-}
-
-#main ul{
-	margin-top: 1em;
-	margin-bottom: 1em;
 }
 
 pre {
