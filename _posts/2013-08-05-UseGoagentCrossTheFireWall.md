@@ -1,18 +1,57 @@
 ---
 layout: post
-title: 网络安全：局域网安全-监听和反监听
-category: 安全
-tags: [web安全,网络监听,反监控]
+title: 局域网为何如此不堪：演习一次内网攻击
+category: safe
+tags: [web安全,局域网安全,内网攻击]
 sharing: true
 comment: true
 robot: index,follow
 alias: 
 published: true
 highlight: yes
-description: "测试描述，看看不好好的的的，我们都是中国人额看不好好的的的，我们都是中国人额看不好好的的的，我们都是中国人额看不好好的的的，我们都是中国人额看不好好的的的，我们都是中国人额看不好好的的的，我们都是中国人额不好好的的的，我们都是中国人额"
+description: '当你在公司内网，或者是在家里或者咖啡馆连上了一个免费的AP，享受互联网冲浪无比畅快的同时，背后可能正有双眼睛在盯着这一切，你正在浏览某“门"的照片，某些敏感信息，甚至是你的银行卡等帐号信息...这到底是怎么回事？'
 ---
-## 准备说明
-准备该片文章一段时间了，作为新博客上第一篇文章，甚是费心，待各种小伎俩融汇贯通，才敢来卖弄。如果熟悉TCP/IP协议族，则阅读本文比较轻松，如不然则也无大恙，毕竟本文只是一篇比较浅薄的入门介绍文档。
+
+准备该文一段时间了，作为新博客上第一篇文章，甚是费心，待各种小伎俩融汇贯通，才敢来卖弄。如熟悉TCP/IP协议族，则阅读本文比较轻松，如不然则也无大恙，毕竟本文只是一篇比较浅薄的入门介绍。
+
+
+## 局域网为何如此不堪
+
+局域网简称LAN（Local Area Network），对应OSI七层模型的三层以下（一般不含第三层IP层)，两层交换机或者共享式集线器组网，该类设备一般不具有路由功能，故局域网内各节点间通过MAC地址（网卡物理地址）标识和通信，而MAC地址是由各个节点自行维护，这可能是局域网脆弱的根本因素。
+
+局域网通信模型图示![LANArchModel][]
+
+### 网络数据安全或许可分为两层
+
+* 局域网链路安全(PATH)
+
+链路即网络数据包经过路线，如果节点A的数据包经过了节点B，则认为是不安全情况，因为节点B可以对经过的数据包作抓包和分析，有泄露隐私的可能。交换型方式组网的局域网默认情况下是链路安全的，因为每个节点之间都是单独链路通信；共享式组网的局域网默认下就是链路不安全，因为该情况下数据包都通过广播方式发送，同网段内任一节点都可以收到包（需调整网络工作模式为混杂模式）。
+
+* 局域网数据安全(DATA)
+
+数据安全理解为数据包如果被别人获取，包含内容是否可被查看到，没有加密而明文传输的数据包都是非安全的。如SSl/STL是安全的，而HTTP数据包一般是非安全的。数据包与实现协议有关，与网络拓扑结构无关。
+
+
+### 脆弱的地址解析协议
+* 地址解析协议(ARP)，ARP(Address Resolution Protocol)，地址解析协议，当内网节点间（或者是节点与网关间）需要通信时，ARP解析获得目标IP地址对应的MAC地址，通过该MAC地址完成数据包发送。
+
+* 域名解析系统(DNS)，互联网上的设备通过IP地址标识，全数子组成的标识不利于人类记忆和处理，域名的出现改变了这种状况，那么域名是如何对应的IP地址的呢，域名服务器（DNS服务器）就是来完成域名和IP地址的互相转换功能。
+
+或许广域网可以看作是一个大局域网（如大中国局域网），其组织结构有类似，但也不同，广域网构建在IP协议之上，因此它的安全性相对更好，除非你是电信内部人士，可以通过控制骨干网关键网络设备，代表如上海有线通用户经常被运营商网页弹窗骚扰；或者你有特殊权限可以直接接触到国家骨干网设备，这些控制权普通用户一般很难获得。而在局域网中通过脆弱的ARP协议和DNS协议，你轻松就可以取得这些权限，局域网中典型的攻击模式大概是这样：
+
+1. 第一步先攻击安全链路以获得数据包访问权，如通过ARP欺骗或者DNS欺骗方式改变正常数据包传输链路；
+
+2. 第二步数据包协议分析，使用抓包软件抓取和分析数据包内容，通过数据包篡改等多种手段最终达成攻击目的。(A)
+
+
+### WLAN
+待补充...
+
+
+
+## 几种利器
+
+本演习系统环境如下：
 
 	$ lsb_release -a
 	Distributor ID:	Ubuntu
@@ -20,113 +59,92 @@ description: "测试描述，看看不好好的的的，我们都是中国人额
 	Release:	12.10
 	Codename:	quantal
 
+在正式开始前，先介绍几个必备的工具。
 
-## 局域网为何如此不堪
-网络数据安全或许可以分为两层：
-
-局域网简称LAN（Local Area Network），对应OSI七层模型的三层以下（一般不含第三层IP层)，两层交换机或者共享式集线器组网，该类设备都不具有路由功能，故局域网内各节点间通过MAC地址（网卡物理地址）标识和通信，而MAC地址是由各个节点自行维护，这可能是局域网脆弱的根本因素。
-
-局域网通信模型图示![LANArchModel][]
-
-* 局域网链路安全
-
-链路即网络数据包经过路线，如果节点A的数据包经过了节点B，则认为是不安全情况，因为节点B可以对经过的数据包作抓包和分析，有泄露隐私的可能。交换型方式组网的局域网默认情况下是链路安全的，因为每个节点之间都是单独链路通信；共享式组网的局域网默认下就是链路不安全，因为该情况下数据包都通过广播方式发送，同网段内仍一节点都可以收到包（需调整网络工作模式为混杂模式）。
-
-* 局域网数据安全
-
-数据安全理解为数据包如果被别人获取，包含内容是否可被查看到，没有加密而明文传输的数据包都是非安全的。如SSl/STL是安全的，而HTTP数据包一般是非安全的。数据包与实现协议有关，与网络拓扑结构无关。
-
-大概所有局域网的攻击模式都是这样的，先攻击安全链路，如通过ARP欺骗或者DNS欺骗方式改变正常数据包传输链路，以获得数据包，抓取数据包则通过协议分析和多种手段取得数据包内容，最终达成攻击目的。
-
-
-### 两个地址解析协议
-#### 地址解析协议(ARP)
-ARP(Address Resolution Protocol)，地址解析协议，当内网节点间（或者是节点与网关间）需要通信时，ARP解析获得目标IP地址对应的MAC地址，通过该MAC地址完成数据包发送。
-
-#### 域名解析系统(DNS)
-待补充...
-
-### WLAN
-待补充...
-
-
-
-## 局域网攻击常用模式
-
-###1. 抓包利器-Wireshark
+### Wireshark(抓包利器)
 [Wireshark][]（前称Ethereal）是一个网络封包分析软件。网络封包分析软件的功能是撷取网络封包，并尽可能显示出最为详细的网络封包资料。Windows下通过[Download](http://www.wireshark.org/download.html)页面下载安装即可，一般主流Linux发行版官方软件仓库已经集成该软件，可直接安装：
 
-* Fedora
+	$sudo apt-get install wireshark
+默认wireshark运行需要root权限，忽略警告信息，选择对应的网络节点开始抓包，wireshark提供两种数据包过滤机制：
 
-	$sudo yum install wireshark 
-* Ubuntu
+* 抓取时过滤规则，即不符合规则的包直接PASS不会抓取；详细规则使用参考[CaptureFilters][],下面规则的作用是仅显示由192.168.1.100发出或者发往192.168.1.100的http数据包。
+	<pre>
+	host 192.168.1.100 and port 80
+	</pre>
 
-	$sudo install wireshark
+* 显示时过滤规则，即所有通过指定节点的包都抓取，但仅在界面上显示符合规则的包，详细规则使用参考[DisplayFilters][]，下面规则的作用是仅显示由192.168.1.100发出或者发往192.168.1.100的http数据包。
+	<pre>
+	(http and ip.dst==192.168.1.100 ) or ( http and ip.src==192.168.1.100)
+	</pre>
 
-默认wireshark运行需要root权限，忽略警告信息，选择对应的网络节点开始抓包，wireshark有两种包过滤机制：
-	抓取时过滤规则，不符合规则的包直接PASS；详细规则使用参考[CaptureFilters][];
-	显示时过滤规则，所有通过指定节点的包都抓取，仅显示符合规则的包在界面上，详细规则使用参考[DisplayFilters][]。
+### Nmap（网络探测工具和安全/端口扫描器）
+[Nmap][],Linux平台下历史悠久且功能强大的网络探测工具和安全扫描器，支持扫描指定网络内主机列表、扫描指定主机开放端口列表甚至探测出所安装操作系统类型。该工具系统默认集成（支持在线包管理器直接安装）。
 
-	Fiter:http or (http and ip.dst==204.232.175.78 ) or ( http and  ip.src==204.232.175.78)
+### Arpspoof(ARP欺骗）
+ARP欺骗工具，工作原理就是不断的向目标节点（攻击对象）发送ARP数据包，包内容为“我是XXX，请把发给XXX的数据包发给我”。安装方法：
 
-###演习一次典型攻击
-* ARP欺骗
-* DNS欺骗	
+	$sudo apt-get install dsniff
 
-### [Nmap][]扫描
-参考手册[NmapManual][]
+###  Ettercap(数据包嗅探和篡改)
+[Ettercap][]，“中间人”攻击利器，详细使用方式参考手册（man ettercap)。
 
-	nmap -sP  192.168.2.0/24
-	nmap -sP  192.168.2.0/24
-
-* 中间人攻击
-
-## 局域网安全保卫战
-* VPN跳出封锁
-* Goagent定向保护
-* HTTPS注意图标
+	$sudo apt-get install ettercap-graphical
 
 
+## 局域网典型攻击演习
+### 第1步：锁定目标
+使用nmap命令扫描局域网，获得主机列表，操作如下：
 
-通过Goagent+GAE技术突破内网http监听
+	nmap -sP  192.168.1.0/24
+* “-sP” 表示使用Ping方式扫描；
+* “192.168.1.0/24”表示扫描"192.168.1.1-192.168.1.254"这个网段的所有机器。
 
-## 准备环境
-OS: Ubuntu 12.10 (X86)
+nmap命令扫描结果仅供参考，也可以尝试其他参数扫描，详细使用方法参考[NmapManual][]。
 
-###1. GAE
-[GAE][]，全称Google App Engine，国内的SAE（Sina App Engine)是它的学生。Google应用云计算平台，支持Python/Java语言开发，意味着用这些语言实现的代码可以放到GAE平台跑起来(部分代码需要修改)，GAE根据应用的使用量计算费用，一定限额内可免费（量其实不小，具体参见[WhatIsGAE][])，需要有Google帐号并开通GAE服务（Google新用户注意）。GAE是本文所述方案实现的关键，正是这个免费的可运行代码的并且在局域网外（甚至是国外）的计算资源的存在，为我们跳出封锁提供了可能，下面就是如何利用这个资源实现设定方案。
+### 第2步：收集信息
+选定目标为主机A(这里假定IP地址为192.168.1.110)，使用命令"nmap 192.168.1.110"可获得主机A的详细情况，如服务端口开放情况，操作系统类型等信息。
 
-###2. Goagent+SwitchySharp
-[Goagent][]，官方介绍：A gae proxy forked from gappproxy/wallproxy.
-Goagent分为两部分，一它实现了一个标准的http代理服务器，并且可以部署到GAE运行。二它同时可作为本地的http代理程序使用，二者配合工作。Goagent支持Windows/Linux/MAC/IOS/Android/...
+        $nmap -A 192.168.1.110
+        Starting Nmap 6.00 ( http://nmap.org ) at 2013-08-12 12:34 CST 
+        Nmap scan report for 10.3.3.108
+        Host is up (0.00026s latency).
+        Not shown: 996 closed ports
+        PORT    STATE SERVICE     VERSION
+        22/tcp  open  ssh         OpenSSH 5.9p1 Debian 5ubuntu1.1 (protocol 2.0)
+        ...
+        139/tcp open  netbios-ssn Samba smbd 3.X (workgroup: WORKGROUP)
+        445/tcp open  netbios-ssn Samba smbd 3.X (workgroup: WORKGROUP)
+        873/tcp open  rsync       (protocol version 30) 
+        Service Info: OS: Linux; CPE: cpe:/o:linux:kernel
 
-[SwitchySharp][]，Chrome Proxy Setting Extension，一款有关Chrome浏览器代理设置的扩展，支持通过规则文件动态调整Chrome浏览器Http代理设置，这一点很有用，比如我们很关心在浏览taobao.com这条记录时不能被老板监控到，比如我们想要访问国外的facebook.com，此类站点设为通过Goagent访问合适，而当我们访问baidu或者内网的wiki页面时，则设为按正常访问合适，通过添加对应的匹配规则使得这些事情简单化。
+### 第3步：开启IP转发和ARP欺骗
+该步仅针对交换式局域网，共享式局域网可以忽略（共享式网络只要打开网卡的混杂模式就可以抓取所有内网数据包），ARP欺骗一般目的是把自己伪装成网关，但如果不作处理，当被欺骗数据包到达后就会被本机丢弃（因为自己到底不是网关，还不知道如何处理这类数据包），这当然是不允许的。开启IP转发功能可以解决该问题，IP转发负责把该类数据包再转发给真正的网关处理，开启IP转发的方法(注意使用root操作第二条命令）：
 
-Goagent+SwitchySharp部署过程分为下面几个步骤,以Windows为例（摘自Goagent官方页面）：
+        $ sudo su
+        # echo 1 > /proc/sys/net/ipv4/ip_forward
+ARP欺骗使用arpspoof命令：
 
-* 申请Google Appengine并创建appid，点击[GAE][];
-* 下载Goagent最新版,点击[Goagent][];
-* 修改local\proxy.ini中的gae字段下的appid="你的appid"(多appid请用|隔开);
-* 上传GAE，双击server\uploader.bat(Mac/Linux上传方法请见[FAQ][]);
-* 运行Goagent本地客户端（Windows运行goagent.exe，Linux运行proxy.py);
-* Chrome请安装[SwitchySharp2][]插件，安装成功后在chrome地址栏右侧会出现一个小地球图标，推荐导入这个设置https://goagent.googlecode.com/files/SwitchyOptions.bak(该文件可在local目录下找到）；
-* Firefox请安装FoxyProxy，Firefox需要导入证书，方法请见[FAQ][].
+        $ sudo arpspoof -i eth0 -t 192.168.1.110 192.168.1.1
+- "-i eth0"指定设备节点，无线网络时可能是"-i wlan0"；
+- "-t 192.168.1.110"指定欺骗对象，如果不指定该项，则欺骗对象为整个网络（192.168.1.1-192.168.1.254)，"192.168.1.1"一般是网关地址。
 
-有关详细安装过程请参考[InstallGuide][]，详细Goagent配置文件说明参考[ConfigIntroduce][]。
+上述命令的作用，不断的给欺骗对象主机发送ARP数据包，内容是告诉它我是”192.168.1.1“（网关），请把所有数据包都发给我。
+
+### 第4步：抓数据包
+使用wireshark工具抓取所有和主机A相关的数据包，过滤掉不相关数据包，只抓取主机A发出或者发给主机A的数据包。启动wireshark:
+      
+        $ sudo wireshark
+选择对应网络设备节点（一般有线网络选择eth0,无线网络选择wlan0)，开始抓包，在Filter输入框输入显示过滤条件：
+
+        ip.addr == 192.168.1.110
+![wireshark_shop][]
+回车后应该在屏幕上看到已抓取包的列表，现在你可以仍然调取和分析主机A上网流量情况。
 
 
-## 原理介绍
-	104         margin-left: 3em;
-	105         list-style: disc;
-	106         font-size: 95%;
-	107         line-height: 170%;
+### 第5步：实施攻击
+ettercap是个强大的工具，再配合sslstrip，基本可以为所欲为。
 
 
-	$sudo yum install wireshark 
-
-## 相关参考阅读
-如何对付公司的监控[1]：规避"网络行为审计" 
-http://program-think.blogspot.com/2013/05/howto-anti-it-audit-1.html
 
 
 [Wireshark]: http://www.wireshark.org/
@@ -144,3 +162,4 @@ http://program-think.blogspot.com/2013/05/howto-anti-it-audit-1.html
 [SwitchySharp2]: https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?hl=zh-CN
 [Nmap]: http://nmap.org/man/zh/
 [NmapManual]: http://nmap.org/man/zh/ 
+[Ettercap]: http://ettercap.github.io/ettercap/index.html
