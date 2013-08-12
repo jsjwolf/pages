@@ -7,8 +7,8 @@ title: Goodbai Blog
 　　<ul>
 　　　　{% for post in site.posts %}
         {% if post.published %} 
-　　　　　　<li><h2><span class="blog_title_date"> {{ post.date | date_to_string }}</span>
-                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2></li>
+　　　　　　<li><h5><span class="blog_title_date"> {{ post.date | date_to_string }}</span>
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5></li>
 	    <div class="bolg_desc"><p>{{ post.description }}</p></div>
 　　　　{% endif %}
 　　　　{% endfor %}
