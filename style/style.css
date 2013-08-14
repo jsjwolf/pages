@@ -144,3 +144,8 @@ pre {
 	line-height: 1em;
 	float: left;
 }
+
+#index {
+	float: right;
+	width: 30%;
+}
