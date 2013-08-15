@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 局域网为何如此不堪：演习一次内网攻击
-category: safe
-tags: [web安全,局域网安全,内网攻击]
+title: '局域网为何如此不堪：演习一次内网攻击'
+category: 'secure'
+tags: '安全 Linux'
+keywords: 'web安全,局域网安全,内网攻击'
 sharing: true
 comment: true
-robot: index,follow
 alias: 
 published: true
 highlight: yes
@@ -152,7 +152,7 @@ ARP欺骗使用arpspoof命令（开启双向欺骗，即同时欺骗主机A和�
 ### 第5步：收获果实
 抓取主机A流量中的图片，通过driftnet工具实现，运行下面命令：
 
-	sudo driftnet -i eth0
+	$ sudo driftnet -i eth0
 
 篡改主机A访问的页面，通过ettercap工具实现，ettercap是个强大的工具，再配合sslstrip，基本可以为所欲为。
 ettercap详细使用方法请参考man手册（man ettercap)，这里有一篇[文章][1]可以参考一二。
@@ -184,6 +184,11 @@ XXXXXXXXXXXXXXXXXXXXXX
 
 [通过伪造CA证书，实现SSL中间人攻击(附详细过程和实现代码）][5]
 
+[关于ARP欺骗与MITM（中间人攻击）的一些笔记（二）] [6]
+
+
+
+
 [Wireshark]: http://www.wireshark.org/
 [FilteringWhilegapturing]: http://www.wireshark.org/docs/wsug_html_chunked/ChCapCaptureFilterSection.html
 [CaptureFilters]: http://wiki.wireshark.org/CaptureFilters
@@ -205,3 +210,4 @@ XXXXXXXXXXXXXXXXXXXXXX
 [3]: http://vmeng.blog.51cto.com/2305370/1143426 "用ettercap实现DNS欺骗实例"
 [4]: http://netsecurity.51cto.com/art/201212/371895.htm  "不知不觉帐号密码被窃:中间人攻击介绍"
 [5]: http://blog.sina.com.cn/s/blog_4a898cfb0100t8j7.html  "通过伪造CA证书，实现SSL中间人攻击(附详细过程和实现代码）"
+[6]: http://www.rootoorotor.org/hacking/%E5%85%B3%E4%BA%8Earp%E6%AC%BA%E9%AA%97%E4%B8%8Emitm%EF%BC%88%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%EF%BC%89%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/ "关于ARP欺骗与MITM（中间人攻击）的一些笔记（二）" 
