@@ -23,20 +23,23 @@ a:active {text-decoration:underline;}
 a {text-decoration:none;}
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight:bolder;
+	font-weight:normal;
 	padding-top:1em;
 	padding-bottom:0;
 }
+h2{
+	font-weight:bolder;
+}
 h1 {font-size:1.4em;margin-top:1em;margin-bottom:1.2em;}
-h2 {font-size:1.4em;margin-top:1.5em;margin-bottom:1.1em;border-bottom: 2px solid rgb(219, 223, 224);}
-h3 {font-size:1.3em;margin-top:1.0em;margin-bottom:1.0em;}
-h4 {font-size:1.2em;margin-top:0.9em;margin-bottom:0.9em;}
+h2 {font-size:1.4em;margin-top:2em;margin-bottom:1.1em;border-bottom: 2px solid rgb(219, 223, 224);}
+h3 {font-size:1.2em;margin-top:1.0em;margin-bottom:1.0em;}
+h4 {font-size:1.1em;margin-top:0.9em;margin-bottom:0.9em;}
 h5 {font-size:1.1em;margin-top:0.8em;margin-bottom:0.8em;}
 h6 {font-size:1.0em;margin-top:0.7em;margin-bottom:0.7em;}
 
 body {
 	repeat-x;
-	line-height: 200%;
+	line-height: 170%;
         font-size:100%;
 	font-family: Palatino, georgia, "times new roman", "宋体";
 	background-color: rgb(219, 223, 224);
@@ -158,4 +161,13 @@ code {
 
 em {
 	font-weight:bolder;
+}
+
+b,em{
+	font-style: normal;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1.0em;	
 }
