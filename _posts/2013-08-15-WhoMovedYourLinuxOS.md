@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '谁动了你的Linux系统'
+title: '谁动了你的系统：Linux系统安全体检'
 category: 'secure'
 tags: '安全 Linux'
 keywords: '系统安全,系统体检'
@@ -12,12 +12,12 @@ highlight: yes
 description: '通过定期体检可以发现身体潜藏的疾病，可能操作系统也一样，如果能定期对Linux系统做安全检查，可以使你的系统更加牢固。系统开放了那些端口(服务），是那个程序开的？是否遭受入侵或者攻击？我们下来看看。'
 ---
 
-本文内容主要是多年使用Linux过程中，个人的一些积累，这里记录下来，与大家共同学习。文中以Ubuntu-12.10系统举例，但同样试用于所有Linux发行版。
+本文内容主要是多年使用Linux过程中，个人的一些积累，这里记录下来，与大家共同学习。文中以Ubuntu-12.10系统举例，但同样适用于其他主流Linux发行版。本文不涉及Intrusion Detection Systems(IDS,入侵检测系统）知识。
 
 
 ## 常规检查
 
-###系统版本信息
+系统版本信息
 
 	$ lsb_release -a
 	LSB Version:	core-2.0-ia32:core-2.0-noarch:core-3.core...
@@ -28,12 +28,14 @@ description: '通过定期体检可以发现身体潜藏的疾病，可能操作
 
 系统安装软件包列表
 	
-	$ dpkg -l 
+	$ rpm -qa                  #Fedora/Redhat系统适用
 
-	$ rpm -qa 
+	$ dpkg -l                  #Ubuntu系统适用
 
 
-###系统进程运行状态
+系统进程运行状态
+	
+	$ top
 
 	1 top - 15:34:24 up 23:44, 10 users,  load average: 0.52, 0.56, 0.59
 	2 Tasks: 245 total,   2 running, 241 sleeping,   1 stopped,   1 zombie
@@ -54,18 +56,38 @@ description: '通过定期体检可以发现身体潜藏的疾病，可能操作
 - 第4,5行，内存使用情况，物理内存4G，空闲703M，交换分区大小为0 
 - 第6,7,8行等，进程列表及实时运行状态 
 
-###系统运行级和系统服务运行情况
+
+系统运行级查看
 
 	$ runlevel 
-	N 2
 
-待补充...
 
+Redhat/Fedora系统服务管理和配置
+
+	$ chkconfig --list
+
+Redhat/Fedora系统也可以通过ntsysv命令在TUI界面配置服务
+
+	$ ntsysv
+
+Ubuntu系统服务管理和配置实现特殊，所以Linux通用的服务管理命令chkconfig等不支持，*经初步试用发现命令update-rc.d还很初级，可能达不到预期效果*。
+
+停止ssh服务
+	
+	$ sudo update-rc.d ssh disable
+
+启用ssh服务
+
+	$ sudo update-rc.d ssh enable
+
+系统访问控制（selinux)，Fedora/Redhat系统Selinux状态查询方法如下(不适用Ubuntu，因没有预装selinux)。
+	
+	$ sudo getenforce
 
 
 ## 帐号安全
 
-###系统用户登陆情况检查
+系统用户登陆情况检查
 
 	$ w
 	 15:09:17 up 23:18,  4 users,  load average: 0.77, 0.59, 0.63
@@ -79,16 +101,14 @@ description: '通过定期体检可以发现身体潜藏的疾病，可能操作
 - 系统已运行时间：23:18
 - 系统平均负载：0.77, 0.59, 0.63 （over the last 1, 5 and 15 minutes）
 - 已登陆用户：4个
-
 	+ demo用户通过网络在图形下的terminal(pts指虚拟终端）登陆，登陆时间15:12，IP地址为192.168.1.100；
 	+ gooo用户的第一个登陆在控制台七(即Ctrl+Alt+F5)，为当前gnome图形桌面的登陆用户；
 	+ gooo用户的第二个登陆在图形下的terminal，正在运行firefox; 
 
-*注意*：如果发现有不明用户登陆系统，可通过命令"pkill -kill -t TTYName"将其踢掉，如踢掉demo用户方命令如下：
+*注意*：如果发现有不明用户登陆系统，可通过命令"pkill -kill -t TTYName"将其踢掉，如踢掉demo用户的命令如下：
 	
 	$ sudo pkill -kill -t pts/2
 
-###系统用户帐号检查
 检查系统中保存帐号列表的文件中是否有异常帐号。
 	
 	$ cat /etc/passwd
@@ -104,7 +124,7 @@ description: '通过定期体检可以发现身体潜藏的疾病，可能操作
 要特别注意类似test(最后一行）的帐号，这个帐号UID被设为0，意味这个用户权限与root完全相同，而且在Ubuntu下可以直接登陆（Ubuntu下默认是不允许root登陆系统的），非常危险。
 
 
-###帐号登陆历史记录
+帐号历史活动记录
 
 last命令显示系统最近三次用户登陆情况，如果不指定-n参数，默认显示所有。
 
@@ -116,7 +136,6 @@ last命令显示系统最近三次用户登陆情况，如果不指定-n参数�
 	gooo     pts/7        :0               Thu Aug 15 15:06   still logged in
 	
 
-###帐号登陆失败录
 lastb命令显示系统最近三次用户登陆失败的情况，如果不指定-n参数，默认显示所有。ubuntu系统下lastb默认不记录通过远程ssh登陆的失败记录，问题还在查找。
 
 	$ sudo lastb -n 3
@@ -129,14 +148,9 @@ aureport是一个更加强大的系统审计信息查询工具，基于audit dae
 
 	$ man aureport
 
-
-
-
-
-
 ## 网络安全
 
-###服务端口开放检查
+服务端口开放检查
 
 	$ sudo netstat -anpt
 
@@ -171,7 +185,7 @@ aureport是一个更加强大的系统审计信息查询工具，基于audit dae
 - 第10行，*未知服务（drop进程，PID2579)*开启了udp协议的17500端口，不限制接入IP地址； 
 - 第11行，cupsd服务开启了tcp6协议(IPv6协议）的631端口，限制仅允许本地访问； 
 
-###网络链路安全检查
+下面是网络链路安全检查
 
 默认网关检查
 
@@ -191,11 +205,16 @@ ARP解析列表缓存显示。如果192.168.1.1是网关IP，而后面的MAC地�
 
 	?  (192.168.1.1) at 00:23:9e:xx:xx:xx [ether] on eth0
 
+防火墙规则情况
+
+	$ sudo iptables --list
+
 
 ## 数据安全
 
 如果有人入侵了你的系统，修改了系统启动脚本，还替换了一些关键程序来掩盖他的行踪，这该然后办？关键是你还不确定入侵是否发生过。
-###RPM包完整性校验
+RPM包完整性校验
+
 Redhat系列发行版（Fedora/RHEL）提供RPM包数据校验功能，通过文件签名值校验安装到系统中的软件包是否已经被篡改，也可以扫描出非官方发布的软件包。校验系统中所有软件包情况：
 
 	$ rpm -Va 
@@ -206,13 +225,60 @@ Redhat系列发行版（Fedora/RHEL）提供RPM包数据校验功能，通过文
 
 	S.5......  c /etc/rc.d/rc.local
 
-上例扫描结果：initscripts包中的文件/etc/rc.d/rc.local与初始版本内容不一致。
+- 上例扫描结果：initscripts包中的文件/etc/rc.d/rc.local与初始版本内容不一致。
 
-###DEB包校验
-Ubuntu目前还没有找到对应功能。
+校验指定文件
+
+	$ rpm -Vf /bin/netstat
 
 
+DEB包校验
 
+Ubuntu系统默认不支持系统已安装包的完整性校验（个人结论），网上查到debsums这个包支持。
+
+	$ sudo apt-get install debsums
+
+	$ debsums  sysv-rc           #校验包sysv-rc
+	$ debsums                    #校验系统中所有包
+
+
+## 系统日志安全
+
+通过分析日志记录是查找系统安全隐患的重要手段，Linux系统下日志默认集中保存在目录/var/log下，下面主要列举几个主要的日志文件。
+
+
+用户帐号认证日志，内容包括帐号登陆记录、权限转换（su/sudo)、修改口令等操作。
+
+	$ sudo vim /var/log/secure   
+
+	$ sudo vim /var/log/auth.log        #Ubuntu系统适用
+
+系统启动日志(即显示一行行OK的那个画面的内容)
+
+	$ sudo vim /var/log/boot.log
+
+内核启动初始化日志
+
+	$ sudo vim /var/log/dmesg
+
+系统服务和核心组件日志（如networkmanager/gnome-session等）
+
+	$ sudo vim /var/log/messages
+
+	$ sudo vim /var/log/syslog          #Ubuntu系统适用
+
+Xorg图形系统日志
+
+	$ sudo vim /var/log/Xorg.0.log
+
+在线软件包操作日志，内容包括install/remove/update等记录。
+
+	$ sudo vim /var/log/yum.log          #Fedora/Redhat系统适用
+
+	$ sudo vim /var/log/yum.log          #Ubuntu系统适用
+
+
+全文完。
 
 
 
