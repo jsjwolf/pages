@@ -1,14 +1,17 @@
 
 /*
- *baidu tongji
+ *baidu tongji for goodbai.com
  */
+
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?fd99fe560159e1c6e260b9c552630259";
+  hm.src = "//hm.baidu.com/hm.js?b256a515de4d09a354567784cc5163ac";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+</script>
 
 /*
  *google analytics
