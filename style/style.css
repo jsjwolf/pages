@@ -175,3 +175,27 @@ p {
 .manual_load {
 	padding: 0.5em;
 }
+
+#melogo {
+	float: right;
+	border: 1px solid #CCCCCC;
+}
+
+#mebox {
+	margin-top: 4em;
+	margin-bottom: 3em;
+	padding: 0 10% 0 10%
+}
+
+#meinfo{
+	margin-top: 2em;
+	margin-bottom: 3em;
+	padding-right: 2em;
+}
+#mechangelog{
+	margin-top: 3em;
+	padding-bottom: 4em;
+}
+#post{
+	padding-bottom: 4em;
+}
