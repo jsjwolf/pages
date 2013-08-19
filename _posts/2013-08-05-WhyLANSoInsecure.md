@@ -174,16 +174,11 @@ XXXXXXXXXXXXXXXXXXXXXX
 
 
 ##参考资料
-[Linux渗透之Ettercap详解][2] (较详细的ettercap文档翻译说明)
-
-[Ettercap简要原理介绍以及使用说明][1] (Ettercap功能介绍)
-
-[用ettercap实现DNS欺骗实例][3]
-
-[不知不觉帐号密码被窃:中间人攻击介绍][4]
-
-[通过伪造CA证书，实现SSL中间人攻击(附详细过程和实现代码）][5]
-
+[Linux渗透之Ettercap详解][2] (较详细的ettercap文档翻译说明)  
+[Ettercap简要原理介绍以及使用说明][1] (Ettercap功能介绍)  
+[用ettercap实现DNS欺骗实例][3]  
+[不知不觉帐号密码被窃:中间人攻击介绍][4]  
+[通过伪造CA证书，实现SSL中间人攻击(附详细过程和实现代码）][5]  
 [关于ARP欺骗与MITM（中间人攻击）的一些笔记（二）] [6]
 
 
