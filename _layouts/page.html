@@ -2,14 +2,18 @@
 layout: default
 ---
   {{ content }}
-    <div id="comment">
     <div id="disqus_thread">
-    <script type="text/javascript">
+    </div>
+<script type="text/javascript">
 	document.write('<input type="button" id="load_comment" value="评论>>" onclick=load_disqus() />');
 	//dis = document.getElementById("disqus_thread")
 	//dis.style.display="block";   
 
 	function load_disqus(){
+		//to load button disivisible
+                aa = document.getElementById("load_comment");
+                aa.style.display = "none";
+
 		var disqus_shortname = 'goodbai'; 
 		(function() {
 		    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -17,6 +21,4 @@ layout: default
 		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 		})();
 	}
-    </script>
-    </div>
- </div>
+</script>

@@ -12,10 +12,32 @@ layout: page
 
 
 	{{ content }}  
+
+
+<!-- Baidu Button BEGIN -->
+<!--span class="bds_more">更多</span-->
+<!--a class="shareCount"></a-->
 </div>
-<!--script>
-	codes = document.getElementsByTagName("pre");
-	codes[0].className = 'prettyprint linenums';
-</script-->
-<!--script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script-->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" > </div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6791596" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.write('<input type="button" id="load_sharebar" value="分享>>" onclick=load_sharebar() />');
+	function load_sharebar(){
+		//disable "load_sharebar" visible
+		aa = document.getElementById("load_sharebar");
+		aa.style.display = "none";
+
+		sharebardiv = document.getElementById("bdshare");
+		tosets = ["bds_tsina","bds_tqq","bds_qzone","bds_renren","bds_fbook",
+			  "bds_douban","bds_mail","bds_twi","bds_xg"];
+		 for(var item in tosets){
+			item_a = document.createElement("a");
+			item_a.className = tosets[item];
+			sharebardiv.appendChild(item_a);
+			
+		}
+		document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+	}
+</script>
 
