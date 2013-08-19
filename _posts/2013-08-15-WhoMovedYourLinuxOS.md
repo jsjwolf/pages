@@ -275,7 +275,7 @@ Xorg图形系统日志
 
 	$ sudo vim /var/log/yum.log          #Fedora/Redhat系统适用
 
-	$ sudo vim /var/log/yum.log          #Ubuntu系统适用
+	$ sudo vim /var/log/apt.log          #Ubuntu系统适用
 
 
 全文完。
