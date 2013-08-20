@@ -1,13 +1,5 @@
-/*全局配置*/
-/*自适应屏幕*/
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-img, object { max-width: 100%;}
-
-/*  手持设备时启用  */
-/*
-/**page 页面包含header/main/footer*/
 @media screen and (min-device-width: 901px) {
-
+/**page 页面包含header/main/footer*/
 	#page{
 		width: 900px;
 		margin-left: auto;
@@ -21,22 +13,32 @@ img, object { max-width: 100%;}
 		margin-left: -1em;
 		margin-right: -1em;
 	}
+	#mebox {
+		margin-top: 4em;
+		margin-bottom: 3em;
+		padding: 0 10% 0 10%
+	}
+	#melogo {
+		float: right;
+		}
 }
+/*  手持设备时启用  */
 @media screen and (max-device-width: 900px) {
+	img, object { max-width: 100%;}
 	#page{
 		width: auto;
 	}
 	#header,#main,#footer {
-		padding-left: 1%;
-		padding-right: 1%;
+		padding-left: 2%;
+		padding-right: 2%;
 	}
 	pre{
 		font-size:60%;
 	}
 	
 }
-*/
 
+/*全局配置*/
 * {
 	padding: 0;
 	margin: 0;
@@ -184,21 +186,14 @@ p {
 	padding: 0.5em;
 }
 
-#melogo {
-	float: right;
+#melogo img {
 	border: 1px solid #CCCCCC;
 }
 
-#mebox {
-	margin-top: 4em;
-	margin-bottom: 3em;
-	padding: 0 10% 0 10%
-}
 
 #meinfo{
 	margin-top: 2em;
 	margin-bottom: 3em;
-	padding-right: 2em;
 }
 #mechangelog{
 	margin-top: 3em;
