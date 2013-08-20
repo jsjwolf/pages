@@ -13,12 +13,25 @@ img, object { max-width: 100%;}
 		margin-left: auto;
 		margin-right: auto;
 	}
+	#header,#main,#footer {
+		padding-left: 7%;
+		padding-right: 7%;
+	}
+	.bolg_desc_in {
+		margin-left: -1em;
+		margin-right: -1em;
+	}
 }
 @media screen and (max-device-width: 900px) {
 	#page{
 		width: auto;
-		margin-left: auto;
-		margin-right: auto;
+	}
+	#header,#main,#footer {
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+	pre{
+		font-size:60%;
 	}
 	
 }
@@ -57,7 +70,6 @@ body {
 #header{
 	margin-top: 2em;
 	font-size:1.3em;
-	padding-left: 7%;
 }
 
 #header a:hover {
@@ -77,20 +89,15 @@ body {
 #header .topitem:hover {
 	/*background: url(/images/umi_from_green.gif);*/
 }
-#header_searchbox {
-	font-size: 50%;
-	width:150px;
-}
 #main {
 	background-color: #FFFFFF;
 	border: 1px solid #CCCCCC;
-	padding: 1em 7% 2em 7%; 
-	margin: 0 0 0 0;                 
-/*	box-shadow: 2px 2px 10px #aaa;
-*/
+	padding-top: 1em; 
+	padding-bottom: 2em; 
 }
 #main a:link { color: blue;}
 #main a:visited{ color: red;}
+
 /*post类,配置正文中列表的css*/
 #main li{
 	margin-left: 3em;
@@ -106,7 +113,6 @@ body {
 #footer{
 	color: gray;
 	font-size: 80%;
-	padding-left: 7%;
 }
 /* 其他配置 */
 #comment {
@@ -125,8 +131,6 @@ body {
 .bolg_desc_in {
 	background-color: rgb(228, 228, 149);
 	margin-bottom: 3em;
-	margin-left: -1em;
-	margin-right: -1em;
 	padding: 1em;
 	padding-left: 2em;
 	padding-right: 2em;
