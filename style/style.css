@@ -42,22 +42,13 @@
 }
 
 /*全局配置*/
-* {
-	padding: 0;
-	margin: 0;
-}
+* {padding: 0;margin: 0;}
 a:hover { text-decoration:underline;}
 a:active {text-decoration:underline;}
 a {text-decoration:none;}
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight:normal;
-	padding-top:1em;
-	padding-bottom:0;
-}
-h2{
-	font-weight:bolder;
-}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;padding-top:1em;padding-bottom:0;}
+h2{font-weight:bolder;}
 h1 {font-size:1.4em;margin-top:1em;margin-bottom:1.2em;}
 h2 {font-size:1.4em;margin-top:2em;margin-bottom:1.1em;border-bottom: 2px solid rgb(219, 223, 224);}
 h3 {font-size:1.2em;margin-top:1.0em;margin-bottom:1.0em;}
@@ -76,7 +67,6 @@ body {
 	margin-top: 2em;
 	font-size:1.3em;
 }
-
 #header a:hover {
         text-decoration:none;
 	color: white;
@@ -109,7 +99,6 @@ body {
 	list-style: disc;
 	line-height: 170%;
 }
-
 #main ul{
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -120,25 +109,18 @@ body {
 	font-size: 80%;
 }
 /* 其他配置 */
-#comment {
-	margin-top: 6em;
-}
-
 /* 首页博文日期和描述段格式*/
 .blog_title_date {
-	font-size: 90%;
+	font-size: 1em;
 	color: gray;
 }
 .bolg_desc {
-	padding-left: 1em;
-	color: gray;
+	padding-left: 2em;
 }
 .bolg_desc_in {
 	background-color: rgb(228, 228, 149);
 	margin-bottom: 3em;
 	padding: 1em;
-	padding-left: 2em;
-	padding-right: 2em;
 }
 
 pre {
@@ -146,7 +128,7 @@ pre {
 	border: 1px solid #CCCCCC;
 	line-height: 140%;
 	background-color: rgb(247, 247, 178);
-	margin: 1.25em auto 1.5em 0;
+	margin: 1.25em auto 1.5em auto;
 }
 /*
 code {
@@ -154,8 +136,6 @@ code {
 	background-color: rgb(247, 247, 178);
 }
 */
-
-
 
 /*首行首字大写 */
 .bolg_desc_in + p:first-letter {
@@ -171,14 +151,10 @@ code {
 	width: 30%;
 }
 
-em {
+em,b {
 	font-weight:bolder;
-}
-
-b,em{
 	font-style: normal;
 }
-
 p {
 	margin-top:1.5em;
 	margin-bottom:1.0em;	
@@ -191,8 +167,6 @@ p {
 #melogo img {
 	border: 1px solid #CCCCCC;
 }
-
-
 #meinfo{
 	margin-top: 2em;
 	margin-bottom: 3em;
