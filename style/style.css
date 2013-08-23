@@ -35,6 +35,9 @@
 	pre{
 		font-size:60%;
 	}
+	#melogo {
+		padding-left: 2em;
+		}
 	
 }
 
@@ -144,7 +147,6 @@ pre {
 	line-height: 140%;
 	background-color: rgb(247, 247, 178);
 	margin: 1.25em auto 1.5em 0;
-	box-shadow: 1px 1px 6px #ccc;
 }
 /*
 code {
