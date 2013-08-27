@@ -9,6 +9,9 @@
 		padding-left: 7%;
 		padding-right: 7%;
 	}
+	#header{
+		margin-top: 2em;
+	}
 	.bolg_desc_in {
 		margin-left: -1em;
 		margin-right: -1em;
@@ -64,8 +67,8 @@ body {
 	background-color: rgb(219, 223, 224);
 }
 #header{
-	margin-top: 2em;
 	font-size:1.3em;
+	padding-top: 0.3em;
 }
 #header a:hover {
         text-decoration:none;
