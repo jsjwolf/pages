@@ -5,12 +5,14 @@ server_port: 4000
 baseurl:    
 url: http://goodbai.com
 
+
 blogname: GoodBai
 weibo: 
 
 source:      .
 destination: ./_site
 plugins:     ./_plugins
+permalink: /blog/:title
 
 future:      true
 lsi:         false
