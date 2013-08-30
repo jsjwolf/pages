@@ -1,18 +1,18 @@
 safe:        false
 auto:        false
 server:      false
-server_port: 4000
+port: 4000
 baseurl:    
 url: http://goodbai.com
-
-
-blogname: GoodBai
-weibo: 
+title: Goodbai Blog
+blogname: Goodbai
+weibo: weibo.com/baigood 
 
 source:      .
 destination: ./_site
 plugins:     ./_plugins
 permalink: /blog/:title
+feed:      /atom.xml
 
 future:      true
 lsi:         false
