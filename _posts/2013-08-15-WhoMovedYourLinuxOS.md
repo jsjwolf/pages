@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '谁动了你的系统：Linux系统安全体检'
+subject: '谁动了你的系统：Linux系统安全体检'
 category: 'secure'
 tags: '安全 Linux'
 keywords: '系统安全,系统体检'
@@ -9,6 +9,8 @@ comment: true
 alias: 
 published: true
 highlight: yes
+postimg_s: /images/01/tingzhenqi_200x133.jpg
+postimg_b: /images/01/tingzhenqi_600x400.jpg
 description: '通过定期体检可以发现身体潜藏的疾病，可能操作系统也一样，如果能定期对Linux系统做安全检查，可以使你的系统更加牢固。系统开放了那些端口(服务），是那个程序开的？是否遭受入侵或者攻击？我们下来看看。'
 ---
 

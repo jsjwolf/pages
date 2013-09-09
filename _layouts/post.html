@@ -2,13 +2,19 @@
 layout: page
 ---
 <div id="post">
-	<h1>{% if page.title %}{{ page.title }} | {% endif %}</h1>
-	<div class="bolg_desc_in">
+	<h1>{% if page.subject %}{{ page.subject }} | {% endif %}</h1>
+	<div class="blog_desc_in">
 		<b>摘要: </b>{{ page.description }}
 		<br><b>作者：</b><a href="/">Goodbai</a>
 		<br><b>原文：</b><a href='{{page.url}}'>地址</a>
 		<br><b>发表：</b>{{page.date  | date_to_string }}
 	</div>
+
+	{% if page.postimg_b %}
+	<div class="blog_img_in">
+		<img src="{{ page.postimg_b }}">
+	</div>
+	{% endif %}
 
 
 	{{ content }}  

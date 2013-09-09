@@ -3,15 +3,28 @@ layout: default
 keyword: goodbai
 title: Goodbai Blog
 ---
- <div id="bloglist" class="bloglist">
-　　<ul>
-　　　　{% for post in site.posts %}
-        {% if post.published %} 
-　　　　　　<li><h5><span class="blog_title_date"> {{ post.date | date_to_string }}</span>
-                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5></li>
-	    <div class="bolg_desc"><p>{{ post.description }}</p></div>
-　　　　{% endif %}
-　　　　{% endfor %}
-　　</ul>
+<div id="homepage">
+{% for post in site.posts %}
+{% if post.published %} 
+<div id="blogitem" class="bloglist">
+	<div id="blogimg" class="center_img_m" >
+		{% if post.postimg_s %}
+		<img src="{{ post.postimg_s }}" width="200">
+		{% else %}
+		<img src="/images/goodbai_200x133.png" width="200">
+		{% endif %}
+	</div>
+	<div id="blogtext">
+		<div id="blogtitle">
+			<span class="blog_title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.subject }}</a></span>
+			<br><span class="blog_title_date"> {{ post.date | date_to_string }}</span>
+		</div>
+		<div class="bolg_desc">
+			<p>{{ post.description }}</p>
+		</div>
+	</div>
+ </div>
+{% endif %}
+{% endfor %}
+
 </div>
-　　
