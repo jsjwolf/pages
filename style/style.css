@@ -88,16 +88,18 @@ body {
 }
 #header{
 	font-size:1.3em;
-	padding-top: 0.3em;
+	padding-top: 0;
+	margin-bottom: 0.1em;
 }
 #header a:hover {
         text-decoration:none;
-	color: white;
+	color: rgb(15, 8, 199);
 }
 #header a { color: black;}
 #header li {
 	display: inline;
 	margin-right: 0.5em;
+	border-bottom: 3px solid rgb(219, 223, 224);
 /*
 	background: url(/images/umi_from_gray.gif);
 	box-shadow: 0px 0px 1px gray;

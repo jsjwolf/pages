@@ -16,8 +16,8 @@
     <div id="header">
         <div id="header_menu">
         <ul id="css3menu">
-        <li class="topitem"><a href="/index.html"> 首页 </a></li>
-        <li class="topitem"><a  href="/about.html">关于</a></li>
+        <li name="home" class="topitem"><a href="/index.html">首页</a></li>
+        <li name="about" class="topitem"><a  href="/about.html">关于</a></li>
         </ul>
         </div>
 
@@ -41,6 +41,11 @@
 
   </body>
 <script src="/js/analytics.js"></script>
+<script>
+	currentname = "";
+	current = document.getElementsByName(currentname)[0];
+	current.style.borderBottom = "2px solid rgb(15, 8, 199)";
+</script>
   
 
 </div>
