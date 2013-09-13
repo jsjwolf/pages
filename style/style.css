@@ -84,7 +84,7 @@ body {
 	line-height: 170%;
         font-size:100%;
 	font-family: Palatino, georgia, "times new roman", "宋体";
-	background-color: rgb(219, 223, 224);
+	background-color: #e8e8e8;
 }
 #header{
 	font-size:1.3em;
@@ -99,15 +99,16 @@ body {
 #header li {
 	display: inline;
 	margin-right: 0.5em;
-	border-bottom: 3px solid rgb(219, 223, 224);
-/*
-	background: url(/images/umi_from_gray.gif);
-	box-shadow: 0px 0px 1px gray;
-/*
-	
 }
-#header .topitem:hover {
-	/*background: url(/images/umi_from_green.gif);*/
+#header .current {
+	border-bottom: 3px solid rgb(15, 8, 199);
+}
+#header #goodbai {
+	float: right;
+	color: white;
+	background-color: #000;
+	padding: 0.3em; 
+	margin-bottom: 1em;
 }
 #main {
 	background-color: #FFFFFF;

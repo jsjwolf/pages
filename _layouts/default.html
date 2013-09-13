@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <!--自适应屏幕-->
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <link media="all" rel="stylesheet" href="/style/style.css" />
     <meta name="copyright" content="{{ site.url }}" />
     <meta name="keywords" content="{{ page.keywords }}" />
@@ -14,10 +14,11 @@
   <body>
   <div id="page" class="background">
     <div id="header">
+        <!--li id="goodbai"><b>Goodbai</b></li-->
         <div id="header_menu">
         <ul id="css3menu">
-        <li name="home" class="topitem"><a href="/index.html">首页</a></li>
-        <li name="about" class="topitem"><a  href="/about.html">关于</a></li>
+        <li name="home" ><a href="/index.html">首页</a></li>
+        <li name="about"><a  href="/about.html">关于</a></li>
         </ul>
         </div>
 
@@ -37,7 +38,7 @@
 <script>
 	currentname = "{{ page.position }}";
 	current = document.getElementsByName(currentname)[0];
-	current.style.borderBottom = "2px solid rgb(15, 8, 199)";
+	current.className = "current";
 </script>
   
 

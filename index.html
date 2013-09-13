@@ -18,7 +18,7 @@ position: home
 	<div id="blogtext">
 		<div id="blogtitle">
 			<span class="blog_title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.subject }}</a></span>
-			<br><span class="blog_title_date"> {{ post.date | date_to_string }}</span>
+			<br><span class="blog_title_date"> {{ post.date | date:"%Y-%m-%d" }}</span>
 		</div>
 		<div class="bolg_desc">
 			<p>{{ post.description }}</p>

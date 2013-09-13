@@ -1,6 +1,4 @@
 safe:        false
-auto:        false
-server:      false
 port: 4000
 baseurl:    
 url: http://goodbai.com
@@ -11,14 +9,13 @@ weibo: weibo.com/baigood
 source:      .
 destination: ./_site
 plugins:     ./_plugins
-permalink: /blog/:title
+permalink:        none
 feed:      /atom.xml
 
 future:      true
 lsi:         false
 pygments:    false
 markdown:    maruku
-permalink:   date
 
 maruku:
   use_tex:    false
