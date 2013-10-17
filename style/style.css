@@ -5,15 +5,21 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	#header,#main,#footer {
-		padding-left: 7%;
-		padding-right: 7%;
+	#main,#footer {
+		padding-left: 3%;
+		padding-right: 3%;
 	}
 	#header{
 	/*	margin-top: 2em;
 	*/
 	}
-	.blog_desc_in {
+
+	#header_menu2 {
+		width: 900px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	blog_desc_in {
 		margin-left: -1em;
 		margin-right: -1em;
 	}
@@ -86,7 +92,17 @@ body {
         font-size:100%;
 	font-family: Palatino, georgia, "times new roman", "宋体";
 	background-color: #e8e8e8;
+	background: -webkit-linear-gradient(left, #dfeead 12%,#ebf8c2 36%,#ebf8c2 62%,#dfeead 95%);
 }
+#headerbar{
+	font-size:1.3em;
+	margin-bottom: 1.2em;
+	padding-top: 0.35em;
+	padding-bottom: 0.25em;
+	border-bottom: 1px solid #2d2d2d;
+	background-color: #2d2d2d;
+}
+
 #header{
 	font-size:1.3em;
 	margin-bottom: 1.2em;
@@ -162,19 +178,33 @@ body {
 	border-bottom: 1px dashed rgb(219, 223, 224);
 	padding-top: 1em;
 	padding-bottom: 1em;
+	line-height: 100%;
 }
 #blogimg {
 	margin-right: 1em;
 }
 .blog_title_date {
-	font-size: 1em;
+	font-size: 0.75em;
 	color: gray;
 }
 .blog_title {
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 .bolg_desc {
 	line-height: 150%;
+	font-size: 0.85em;
+	color: #666;
+}
+#artinfo {
+	font-size: 80%;
+	color: #666;
+}
+Matched CSS Rules
+
+#artlogoS {
+/*
+	margin-top: 1em;
+*/
 }
 .blog_desc_in {
 	background-color: rgb(228, 228, 149);

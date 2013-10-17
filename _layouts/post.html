@@ -2,12 +2,14 @@
 layout: page
 ---
 <div id="post">
-	<h1>{% if page.subject %}{{ page.subject }} | {% endif %}</h1>
+	<h1><b>{% if page.subject %}{{ page.subject }} | {% endif %}</b></h1>
 	<div class="blog_desc_in">
 		<b>摘要: </b>{{ page.description }}
+		<span id="artinfo">
 		<br><b>作者：</b><a href="/">Goodbai</a>
 		<b>| 原文：</b><a href='{{page.url}}'>地址</a>
 		<b>| 发表：</b>{{ page.date|date:"%Y-%m-%d" }}
+		</span>
 	</div>
 
 	{% if page.postimg_b %}
