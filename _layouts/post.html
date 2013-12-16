@@ -2,24 +2,24 @@
 layout: page
 ---
 <div id="post">
-	<h1><b>{% if page.subject %}{{ page.subject }} | {% endif %}</b></h1>
-	<div class="blog_desc_in">
-		<b>摘要: </b>{{ page.description }}
-		<span id="artinfo">
-		<br><b>作者：</b><a href="/">Goodbai</a>
-		<b>| 原文：</b><a href='{{page.url}}'>地址</a>
-		<b>| 发表：</b>{{ page.date|date:"%Y-%m-%d" }}
-		</span>
-	</div>
+       <h1><b>{% if page.subject %}{{ page.subject }} | {% endif %}</b></h1>
+       <div class="blog_desc_in">
+               <b>摘要: </b>{{ page.description }}
+               <span id="artinfo">
+               <br><b>作者：</b><a href="/">Goodbai</a>
+               <b>| 原文：</b><a href='{{page.url}}'>地址</a>
+               <b>| 发表：</b>{{ page.date|date:"%Y-%m-%d" }}
+               </span>
+       </div>
 
-	{% if page.postimg_b %}
-	<div class="blog_img_in">
-		<img src="{{ page.postimg_b }}">
-	</div>
-	{% endif %}
+       {% if page.postimg_b %}
+       <div class="blog_img_in">
+               <img src="{{ page.postimg_b }}">
+       </div>
+       {% endif %}
 
 
-	{{ content }}  
+       {{ content }}  
 
 
 <!-- Baidu Button BEGIN -->
@@ -30,22 +30,21 @@ layout: page
 <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6791596" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-	document.write('<input class="manual_load" type="button" id="load_sharebar" value="展开分享>>" onclick=load_sharebar() />');
-	function load_sharebar(){
-		//disable "load_sharebar" visible
-		aa = document.getElementById("load_sharebar");
-		aa.style.display = "none";
+       document.write('<input class="manual_load" type="button" id="load_sharebar" value="展开分享>>" onclick=load_sharebar() />');
+       function load_sharebar(){
+               //disable "load_sharebar" visible
+               aa = document.getElementById("load_sharebar");
+               aa.style.display = "none";
 
-		sharebardiv = document.getElementById("bdshare");
-		tosets = ["bds_tsina","bds_tqq","bds_qzone","bds_renren","bds_fbook",
-			  "bds_douban","bds_mail","bds_twi","bds_xg"];
-		 for(var item in tosets){
-			item_a = document.createElement("a");
-			item_a.className = tosets[item];
-			sharebardiv.appendChild(item_a);
-			
-		}
-		document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
-	}
+               sharebardiv = document.getElementById("bdshare");
+               tosets = ["bds_tsina","bds_tqq","bds_qzone","bds_renren","bds_fbook",
+                         "bds_douban","bds_mail","bds_twi","bds_xg"];
+                for(var item in tosets){
+                       item_a = document.createElement("a");
+                       item_a.className = tosets[item];
+                       sharebardiv.appendChild(item_a);
+                       
+               }
+               document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+       }
 </script>
-

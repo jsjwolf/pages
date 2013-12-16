@@ -6,7 +6,7 @@ tags: 'github_page html jekyll'
 keywords: 'github page'
 sharing: true
 comment: true
-published: true
+published: no
 highlight: yes
 postimg_b: /images/GibhubPage/github_600x400.png
 postimg_s: /images/GibhubPage/github_200x133.png
