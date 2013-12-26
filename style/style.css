@@ -157,7 +157,8 @@ body {
 /*post类,配置正文中列表的css*/
 #main li{
 	margin-left: 3em;
-	list-style: disc;
+/*	list-style: disc;
+**/
 	line-height: 170%;
 }
 #main ul{
