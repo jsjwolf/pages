@@ -9,7 +9,7 @@ comment: true
 alias: 
 published: true
 highlight: yes
-postimg_s: /images/artist/gongji_200x133.jpg
+postimg_s: /images/artist/hacker_200x133.jpg
 description: '当你在公司、在家里抑或咖啡馆连上了一个免费AP，享受互联网冲浪无比畅快的同时，背后可能正有双眼睛在监视着，MM们正在臭美的QQ空间，GG们正浏览的"照片"，甚至是银行卡等帐号信息...这到底是怎么回事？'
 ---
 
