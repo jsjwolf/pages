@@ -232,6 +232,9 @@ pre {
 	line-height: 140%;
 	background-color: rgb(247, 247, 178);
 	margin: 1.25em auto 1.5em auto;
+	overflow: auto; 
+	width: 100%; 
+	font-size:80%;
 }
 /*
 code {
