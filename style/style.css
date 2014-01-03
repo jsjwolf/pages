@@ -185,6 +185,9 @@ body {
 #blogimg {
 	margin-right: 1em;
 }
+#blogLOGO {
+	display: inline;
+}
 .blog_title_date {
 	font-size: 0.75em;
 	color: gray;
