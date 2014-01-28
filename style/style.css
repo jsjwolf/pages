@@ -93,7 +93,9 @@ body {
         font-size:100%;
 	font-family: Palatino, georgia, "times new roman", "宋体";
 	background-color: #e8e8e8;
+/*
 	background: -webkit-linear-gradient(left, #dfeead 12%,#ebf8c2 36%,#ebf8c2 62%,#dfeead 95%);
+*/
 }
 #headerbar{
 	font-size:1.3em;
