@@ -2,7 +2,7 @@ safe:        false
 port: 4000
 baseurl:    
 url: http://goodbai.com
-title: Goodbai Blog
+title: 高蛋白网 
 blogname: Goodbai
 weibo: weibo.com/baigood 
 
