@@ -97,20 +97,15 @@ body {
 	background: -webkit-linear-gradient(left, #dfeead 12%,#ebf8c2 36%,#ebf8c2 62%,#dfeead 95%);
 */
 }
-#headerbar{
-	font-size:1.3em;
-	margin-bottom: 1.2em;
-	padding-top: 0.35em;
-	padding-bottom: 0.25em;
-	border-bottom: 1px solid #2d2d2d;
-	background-color: #2d2d2d;
-}
 
 #header{
 	font-size:1.3em;
 	margin-bottom: 1.2em;
+/*
 	padding-top: 0.35em;
 	padding-bottom: 0.25em;
+	border-bottom: 1px solid #2d2d2d;
+*/
 /*
 	filter: alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=0);
 	-ms-filter: alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=0);
@@ -119,7 +114,6 @@ body {
 	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FFFFFF), to(rgba(7, 7, 7, 0.5)));
 	background: -o-linear-gradient(top, red, rgba(0, 0, 255, 0.5));
 */
-	border-bottom: 1px solid #2d2d2d;
 	background-color: #2d2d2d;
 }
 #header a:hover {
@@ -189,6 +183,7 @@ body {
 }
 #blogLOGO {
 	display: inline;
+	padding-right: 1em;
 }
 .blog_title_date {
 	font-size: 0.75em;
