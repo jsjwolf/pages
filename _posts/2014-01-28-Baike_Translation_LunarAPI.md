@@ -1,155 +1,199 @@
 ---
 layout: post
-subject: 'linux桌面打印机配置指南'
-category: 'linux'
-keywords: 'cups,打印机适配'
+subject: '百科_翻译_黄历API分析和常用符号表'
+category: 'API'
+keywords: '百科,翻译,黄历,符号表,API'
 sharing: true
 comment: true
 alias: 
 published: true
 highlight: yes
 postimg_s: /images/artist/printer_200x133.jpg
-description: 'Linux下打印机适配难，主要是Linux版本太多，导致厂商无力也无太大兴趣关心其，个人刚好接触过这一块，专门整理一份文档方便查阅。 '  
+description: ' 主要介绍百度百科API使用方法，有道翻译API使用方法和老黄历API使用，另外再附一个有用的符号表。'  
 ---
 
-目前Linux系统主流使用[CUPS](http://www.cups.org/)（Common Unix Printing System)打印服务系统。
+微信公共号提供百科、中英翻译以及老黄历查询，是一件很有意思也有的事。以前与朋友聊天听到一个新的网络词汇，只能一头雾水，现今你可以轻松掏出手机，向微信公共号『随手查查』回复”白富美“（这里是例举），就一切明白了。
 
-##HP printer
-[HPLIP](http://hplipopensource.com/hplip-web/index.html)(HP Linux Imaging and Printing)开源项目提供的Linux驱动可以支持市面上大多数HP打印机，部分的打印机可能需要额外安装**插件**，插件一般为固件（.fw文件）或预编译的共享库（.so文件）（**需要插件的设备一般不支持国产龙芯和ARM平台之类**）。  
+本文主要介绍：
+1. 百度百科API使用方法;
+2. 有道翻译API使用方法;
+3. 老黄历API方案;
+4. 个人收集的常用符号表。
 
-支持情况查询：http://hplipopensource.com/hplip-web/supported_devices/combined.html  
-插件安装参考：http://hplipopensource.com/node/309  
-经分析，插件下载地址是: http://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/  
-安装目录: /usr/share/hplip/scan/plugins/ 
- 
-## Canon printer
-驱动地址：
-http://www.canon-europe.com/Support/Consumer_Products/products/printers/Laser/Laser_Shot_LBP1120.aspx?DLtcmuri=tcm:13-1060371&page=1&type=download#
+中文百科网站主要有三家，[百度百科](http://baike.baidu.com/link?url=C1JNg9D7uiwZ1U02QUuhMzpnHM_knIaPNC-Uqj5CsrP_39qb8kzE410j8gke5tOoienLhhWrYnqLkb3HhiUQua)、[维基百科](http://zh.wikipedia.org/w/index.php?search=%E7%99%BD%E5%AF%8C%E7%BE%8E&title=Special%3A%E6%90%9C%E7%B4%A2)和[互动百科](http://www.baike.com/wiki/%E7%99%BD%E5%AF%8C%E7%BE%8E&prd=button_doc_jinru)。  
 
-## 几个Linux重要的打印机驱动包
+## 维基百科API分析（wikipedia）
+没有详细分析。  
+IBM Blog参考：<http://www.ibm.com/developerworks/cn/xml/x-phpwikipedia/>   
+形如：<http://git.oschina.net/goodbai/goodbai-wiki/wikis/pages>  
+API Ref: <http://www.mediawiki.org/wiki/API>  
 
-###HPLIP
-[HPLIP](http://hplipopensource.com/hplip-web/index.html)上面已经介绍过，HPLIP开源项目由HP官方支持，包括打印和扫描扫描设备的驱动，同时包括hp-setup/hp-check等命令可供现场适配调试用。  
+##互动百科API分析
+当前没有研究。
 
-###foo2zjs
-[foo2zjs](http://foo2zjs.rkkda.com/)，Linux著名的第三方开源打印机驱动，对于它的作者我一直没有搞清来历，只在项目主页看到一句充满愤怒的话，如下：
-> *** DON NOT USE the foo2zjs package from:  
->     	 Ubuntu, SUSE, Mandrake/Manrivia, Debian, RedHat, Fedora, Gentoo, Xandros, EEE PC, Linpus, MacOSX, or BSD!  
-> *** Download it here and follow the directions below.  
+##百度百科API分析
+API示例：<http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&bk_length=600>
 
-foo2zjs项目有几个入口，但内容都是一样的，内包含多个小模块（foo2zjs/foo2slx/foo2qpdl/foo2xqx/foo2hbpl2等），可以直接从发行版仓库安装，也可自行下载源码包安装（编译安装方法参考包内INSTALL文件或主页说明）。  
+**JSON数据格式分析**  
+该接口默认返回的数据是经escape() 函数编码的（escape可对字符串进行编码，这样就可以在所有的计算机上读取该字符串），相应使用unescape函数可解码（参考：http://www.w3school.com.cn/js/jsref_escape.asp）。  
 
-**注意：**
-1 可能有多个驱动同时支持一款打印机；  
-2 HPLIP项目中列出需要插件的HP打印机，如果使用foo2zjs驱动，同样需要安装插件。
+下面是“操作系统”关键词查询返回的结果：
+```JSON
+{       
+        "id":"880",
+        "subLemmaId":"4940471",
+        "key":"\u64cd\u4f5c\u7cfb\u7edf",                    //查询词
+        "title":"\u64cd\u4f5c\u7cfb\u7edf",     
+        "card":[{
+                "key":"m25_nameC",
+                "name":"\u4e2d\u6587\u540d",                //中文名称
+                "value":["\u64cd\u4f5c\u7cfb\u7edf"],
+                "format":["\u64cd\u4f5c\u7cfb\u7edf"]
+        },
+        {
+                "key":"m25_nameE",
+                "name":"\u5916\u6587\u540d",                //英文名称
+                "value":["Operating System<\/a>"],
+                "format":["Operating System<\/a>"]
+        },
+        {
+                "key":"m25_ext_0",
+                "name":"\u82f1\u6587\u7b80\u79f0",       //英文简称
+                "value":["OS<\/a>"],
+                "format":["OS<\/a>"]
+        },
+        {
+                "key":"m25_ext_1",
+                "name":"\u7ec4\u6210\u90e8\u5206",     //组成部分
+                "value":["\u5185\u6838<\/a>\u3001\u9a71\u52a8\u7a0b\u5e8f<\/a>\u3001\u63a5\u53e3\u5e93\u3001\u5916\u56f4"],
+                "format":["\u5185\u6838<\/a>\u3001\u9a71\u52a8\u7a0b\u5e8f<\/a>\u3001\u63a5\u53e3\u5e93\u3001\u5916\u56f4"]
+        },
+        {
+                "key":"m25_ext_2",
+                "name":"\u5e38\u89c1\u7cfb\u7edf",          //常见系统
+                "value":["Android<\/a>, iOS<\/a>, Linux<\/a>, Windows<\/a>"],"format":["Android<\/a>, iOS<\/a>, Linux<\/a>, Windows<\/a>"]
+        }],
+        "image":"http:\/\/imgsrc.baidu.com\/baike\/pic\/item\/f11f3a292df5e0fedeceedfa5c6034a85fdf7272.jpg",
+        "imageHeight":"400",
+        "imageWidth":"450",
+        "isSummaryPic":"y",
+ //介绍       "abstract":"\u64cd\u4f5c\u7cfb\u7edf\u662f\u7ba1\u7406\u8ba1\u7b97\u673a\u786c\u4ef6\u8d44\u6e90\uff0c\u63a7\u5236\u5176\u4ed6\u7a0b\u5e8f\u8fd0\u884c\u5e76\u4e3a\u7528\u6237\u63d0\u4f9b\u4ea4\u4e92\u64cd\u4f5c\u754c\u9762\u7684\u7cfb\u7edf\u8f6f\u4ef6\u7684\u96c6\u5408\u3002\u64cd\u4f5c\u7cfb\u7edf\u662f\u8ba1\u7b97\u673a\u7cfb\u7edf\u7684\u5173\u952e\u7ec4\u6210\u90e8\u5206\uff0c\u8d1f\u8d23\u7ba1\u7406\u4e0e\u914d\u7f6e\u5185\u5b58\u3001\u51b3\u5b9a\u7cfb\u7edf\u8d44\u6e90\u4f9b\u9700\u7684\u4f18\u5148\u6b21\u5e8f\u3001\u63a7\u5236\u8f93\u5165\u4e0e\u8f93\u51fa\u8bbe\u5907\u3001\u64cd\u4f5c\u7f51\u7edc\u4e0e\u7ba1\u7406\u6587\u4ef6\u7cfb\u7edf\u7b49\u57fa\u672c\u4efb\u52a1\u3002\u64cd\u4f5c\u7cfb\u7edf\u7684\u79cd\u7c7b\u5f88\u591a\uff0c\u5404\u79cd\u8bbe\u5907\u5b89\u88c5\u7684\u64cd\u4f5c\u7cfb\u7edf\u53ef\u4ece\u7b80\u5355\u5230\u590d\u6742\uff0c\u53ef\u4ece\u624b\u673a\u7684\u5d4c\u5165\u5f0f\u64cd\u4f5c\u7cfb\u7edf\u5230\u8d85\u7ea7\u8ba1\u7b97\u673a\u7684\u5927\u578b\u64cd\u4f5c\u7cfb\u7edf\u3002\u76ee\u524d\u6d41\u884c\u7684\u73b0\u4ee3\u64cd\u4f5c\u7cfb\u7edf\u4e3b\u8981\u6709Android\u3001BSD\u3001iOS\u3001Linux\u3001Mac OS X\u3001Windows\u3001Windows Phone\u548cz\/OS\u7b49\uff0c\u9664\u4e86Windows\u548cz\/OS\u7b49\u5c11\u6570\u64cd\u4f5c\u7cfb\u7edf\uff0c\u5927\u90e8\u5206\u64cd\u4f5c\u7cfb\u7edf\u90fd\u4e3a\u7c7bUnix\u64cd\u4f5c\u7cfb\u7edf\u3002",
+        "catalog":["\u7b80\u4ecb<\/a>","\u53d1\u5c55\u5386\u53f2<\/a>","\u7ec4\u6210\u90e8\u5206<\/a>","\u5185\u6838\u7ed3\u6784<\/a>"],  //章节标题
+        "url":"http:\/\/baike.baidu.com\/view\/880.htm",
+        "hasOther":"1",
+        "subLemma":"",
+        "logo":"http:\/\/img.baidu.com\/img\/baike\/logo-baike.gif",
+ //百度版权声明       "copyrights":"\u4ee5\u4e0a\u5185\u5bb9\u6765\u81ea\u767e\u5ea6\u767e\u79d1\u5e73\u53f0\uff0c\u7531\u767e\u5ea6\u767e\u79d1\u7f51\u53cb\u521b\u4f5c\u3002"
+}
 
-### gutenprint
-没有仔细研究，建议直接通过发行版安装。
-
-##Linux系统打印机适配流程参考
-鉴于Linux系统小众的原因，不是市面上每一款打印机都一定能适配成功，但可参考下面方法尝试。  
-
-1. 尽量升级驱动到最新版
-如升级CUPS/foo2zjs/hplip/guteprint/，或者是换最新的Ubuntu/Fedora发新版。  
-1. 查看硬件设备是否已识别，一般OK，否则可能是设备损坏或者连接有问题。  
 ```
-$ lsusb
-```
-1. 查看打印系统（CUPS）是否识别设备  
-```
-$ sudo /usr/lib/cups/backend/usb  #针对USB打印机
-```
-如果是HP打印机，可使用hp-setup命令以向导模式安装。
 
-## 其他辅助操作
-###lpadmin命令操作打印机配置
+查询出错示例如下：[查看原始页面](http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E6%88%91%E4%BB%AC%E9%83%BD%E6%98%AF%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E5%9B%9B%20%20%20%E5%A4%A7%E6%9B%B4%E5%A4%9A%E9%98%BF%E8%BE%BE%E4%B8%89%E4%B8%AA&bk_length=600)
 ```
-/usr/sbin/lpadmin -p TOEC--Printer -m OEP102B.ppd -v usb://TOEC/Printer  #添加  
-/usr/sbin/lpadmin -d TOEC--Printer  #设为默认  
+{"error_code":"20000","error_msg":"search word not found"}
 ```
 
-###打印机后端调试
+
+##翻译功能
+###百度翻译
+
+百度翻译内容比较简单，中译英或英译中结果一般只有一个词（或一句话），没有音标、相近词、用法等信息。  
+一篇参考：<http://www.cnblogs.com/mchina/p/3170565.html>  
+baidu翻译官方：<http://developer.baidu.com/wiki/index.php?title=帮助文档首页/百度翻译/翻译API>
+
+###有道翻译
+有道翻译内容比较丰富，既有释意，也有音标、相近词、用法等信息。  
+官方页面：<http://fanyi.youdao.com/openapi?path=data-mode>  
+API示例：<http://fanyi.youdao.com/fanyiapi.do?keyfrom=goodbaiA&key=2122702772&type=data&doctype=json&version=1.1&q=翻译>  
 ```
-/usr/lib/cups/backend/usb #发现usb打印设备  
-CUPS_DEBUG_LEVEL=2 su-c " /usr/lib/cups/backend/ipp" 2>&1 | tee snmp.log #后端调试  
-usblp.ko #默认匹配多数usb打印机，适配施乐p105b时发现，自动加载模块导致无法发现设备（移除该模块后正常）  
+{
+    "translation":["translation"],
+    "basic":{
+        "phonetic":"fān yì",
+        "explains":["translate","interpret"]
+    },
+    "query":"翻译",
+    "errorCode":0,
+    "web":[
+        {"value":["Translation","translate","Translator"],"key":"翻译"},
+        {"value":["Machine translation","mechanical translation","Machinery-Translating"],"key":"机器翻译"},
+        {"value":["Translation memory","Translation memories","Translation memory manager"],"key":"翻译记忆"} 
+    ]
+}
+
+```
+示例二  
+
 ```
 
-### 查看CUPS日志
+{
+    "translation":["狼"],
+    "basic":{
+        "phonetic":"wʊlf",
+        "explains":["n. 狼；色狼；残忍贪婪之人","vt. 大吃；狼吞虎咽地吃"]
+    },
+    "query":"wolf",
+    "errorCode":0,
+    "web":[
+        {"value":["狼","沃尔夫","狼与美女"],"key":"wolf"},
+        {"value":["艾瑞克·沃尔夫","沃尔夫","伍尔夫"],"key":"Eric Wolf"},
+        {"value":["埃塞俄比亚狼","衣索比亚狼","西门豺"],"key":"Ethiopian wolf"}
+    ]
+}
+
 ```
-/var/log/cups/error_log
+
+## 农历的实现
+农历和公历间可通过算法对应，参考该项目实现：<https://github.com/dfar2008/c3crm/blob/4f68a942f28ca935439a9b34e9834819a4726f1c/modules/Memdays/Lunar.php>
+
+###汉典老黄历API  
+[汉典](http://www.zdic.net/appendix/f27.htm)，其提供老黄历chm文件下载，其他资源也不错（包括字典，词典等）。
+分析其老黄历访问接口：<http://www.zdic.net/nongli/inc/ll2.asp>  
+汉典老黄历API：<http://www.zdic.net/nongli/2014-10-14.htm> （这个接口不错）  
+
+## 附录1：参考资料
+收集一些特殊的符号: <http://dev.yesky.com/89/33282589.shtml>
+百度百科API参考：<https://github.com/yansunrong/baike/blob/master/content_scripts/baike.js>  
+
+
+## 附录2：一些有意思的符号集合
+通过组合符号等方法，可实现创意表达方法，微信可以很好的识别下面的符号，而且还对一些符号作了夸张的修饰。
+如：
 ```
+                   ,　-----　､ 
+　　　　　　　　____／〃"　　､､､　ヽ 
+　　　　　　∠＞　｀￣￣｀ヽ, --z _ i 
+　　　　 ／ ,＞　　　　　　　　　　 ヽ ￣＼ 
+　 　　./,∠. 　　　人　 ､　　　゛゛゛　ヽ゛､ ヽ 
+　　　/　_ノ .　　/ 　|　/|人　　゛゛゛　|　　　i 　　　＿＿＿＿＿ 
+　　　|　　〉/　./|　　ﾚ´／　｀ヽ λ　│ |　|i | 　／ 
+　　　i ll 〈/| 　|‐ヽ　　 , ― ､　|ﾉ | 　丿| |┤| ＜　人は死ぬぞ 
+　 　 |　　　|人′・ﾉ 　　､・_丿　/ヽ,ノ ﾚ ､/ 　　＼＿＿＿＿＿ 
+　　　ゞ､ ゛　 　|　ヽ　　　　, メ　б│､|　"/ 
+　　　　 ＼゛､　ヽ　　ー　　　　 ゝ.ノ "　 ／ 
+　　　　　　｀‐ヽ _＼ _　＿　ノ ／ﾚ'__／ 
+　　　 　 　　　　　　 　|　 　　.| 
+　　　　　　　　　______.ﾉ 　 　 人(⌒) 
+　　　　　　　 ／/::::::::|-､ ,-/::::::ﾉ ~.ﾚ-r┐ 
+　　　　　　 /　/:::::::::::|　　/:::::ノ__　|　.|　ﾄ､ 
+　　　　　　 | /:::::::::::::::|　〈￣ 　　｀-Lλ_ﾚ′ 
+　　　　　　 ﾚ::::::::::::::::::|/:::￣｀ー‐---‐′ 
 
-### Web方式管理CUPS打印系统
-CUPS默认开启web后台管理服务，浏览器访问<http://127.0.0.1:631/>即可。  
-
-## 龙芯平台Canon Laser Shot LBP1120 适配记录
-驱动地址：<http://www.canon-europe.com/Support/Consumer_Products/products/printers/Laser/Laser_Shot_LBP1120.aspx?DLtcmuri=tcm:13-1060371&page=1&type=download#>
-###源码编译
-README中说明了依赖、支持的设备及支持发行版情况。  
-源代码分为两部分：cndrvdups-common和cndrvcups-capt。  
-cndrvdups-common  
-参考README，执行（已完成）：  
 ```
-make gen
-make 
-make install [DESTDIR=./root]
+部分符号集合  
 ```
-cndrvcups-capt  
+、。·ˉˇ¨〃々—～‖…‘’“”〔〕〈 〉《》「」『』〖〗【】±+-×÷∧∨∑∏∪∩∈√⊥∥∠⌒⊙∫∮≡≌≈∽∝≠≮≯≤≥∞∶ ∵∴∷♂♀°
+′″℃$¤￠￡‰§№☆★〇○●◎◇◆ 回□■△▽⊿▲▼◣◤◢◥▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▓※→←↑↓↖↗↘↙〓 ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹ①②③④⑤⑥⑦⑧⑨⑩
+⒈⒉⒊⒋ ⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩
+ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ!"#￥%&'()*+，-./0123456789：;<=>？@ABCDEFGHIJLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|｝
+ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷ
+へべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんァアィイゥウェエォオカガキギクグケゲコゴ
+サザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブ
+プヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθ ικλμνξοπρστυφχψ 
+ω︵︶︹︺︿﹀︽︾﹁﹂﹃﹄︻︼︷︸АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыь эюāáǎàēéěèī 
+íǐìōóǒòūúǔùǖǘǚǜüêɑńňɡㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ︱︳︴﹏﹋﹌─━│┃┄┅┆ 
+┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄ ╅╆╇╈╉╊╋？㊣㈱曱甴囍∟┅﹊﹍╭ ╮╰ ╯ _ ^︵^﹕﹗
+/\ " < > `,·。{}~～() -√ $ @ * & # 卐℡ ぁ〝〞ミ灬№*ㄨ≮≯ ﹢﹣/∝≌∽≦≧≒﹤﹥じぷ┗┛￥￡§я-―‥…‰′″℅℉
+№℡∕∝∣═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬╱ ╲╳▔▕〆〒〡〢〣〤〥〦〧〨〩㎎ ㎏ ㎜ ㎝ ㎞ ㎡ ㏄ ㏎㏑㏒㏕
+兀︰﹍﹎ ------
 ```
-./allgen.sh
-```
-错误：../libtool: line 841: X–tag=CC: command not found ...  
-解决：
-缺少$echo定义导致（有$ECHO)，在allgen.sh添加export echo=echo(make install前也要添加).  
-
-###安装调试
-按上面的步骤成功编译和安装驱动后，接入打印机自动生成配置，打印测试页失败。比较发现该下载包中预编译的RPM包，要多出一些文件（如/usr/bin/ccpd等），对应到源码下libs目录也有一份预编译的x86的二进制文件，看来canon驱动只是部分开放，下面的说明也验证了这个说法。
-
-http://forums.fedoraforum.org/showthread.php?t=280582  
-http://www.unixmen.com/installation-canon-lbp2900-on-linux-2/  
-
-具体说，canon的这个驱动在cups和设备之间加了一个黑盒层（不开放源代码）ccpd，通过该守护进程实现功能，而该ccpd守护程序当前无法在Mips下运行。
-
-该情况发送邮件询问canon欧洲官方支持，结果告知问题要发给canon中国解决，如下：
-
->Dear good bai, 
->
->Thank you for having contacted Canon Europe customer support. 
->
->In order to provide you with the best response to your query, we have forwarded your >request to the local Canon Services & Support organisation responsible for your >geographical region. 
->
->Please do not hesitate to contact them directly at the following email address: >http://www.canon.com.cn/support/service.html
->
->Yours sincerely, 
-
-而canon中国根本就不提供Linux驱动的下载，该驱动就是从canon欧洲官方网站下载到的。
-
-初步结论：该驱动不支持龙芯平台（经官方方确认）。
-###UFR版驱动
-UFR II Printer Driver for Linux Version 2.60：http://support-cn.canon-asia.com/contents/CN/ZH/0100270809.html   
-Information on Printers from Canon：https://www-304.ibm.com/support/docview.wss?uid=nas8N1019527  
-
-URF驱动包与capt包类似，目前编译完成，可自动添加，开始报过滤期丢失，后来驱动无效。。。
-
-**补充：canon中国客服告知，LBP2900的唯一驱动是capt（http://support-cn.canon-asia.com/contents/CN/ZH/0100459603.html，这个与canon欧洲的capt驱动完全一致）**
-
-**结论：该Canon打印机驱动可以支持X86 Linux系统，但无法支持龙芯等国产平台（因为预编译库为x86版）**
-
-##通过cups配置打印机共享
-* Server端的设置  
- 1 在“打印机设置”界面中，右键单击想要共享的打印机，在菜单中“共享”一项前打“√”，表示启用共享。  
- 2 在“打印机设置”界面中，单击“服务器”，选择“设定”，输入root密码正确后，在弹出的“服务器设定”对话框中，勾选“发布连接到该系统的共享打印机”，其子项“允许从互联网打印”也要勾选。如果提示“更改防火墙”，选择更改防火墙。至此，server端设置完成。
-
-* Client端的设置  
- 1 单击“启动”，选择“系统”--->“硬件”--->“打印”，打开“打印机设置”界面。  
- 2 “打印机设置”界面打开后，单击“添加”按钮，输入root密码，出现“新打印机”界面  
- 3 在此界面中选择“查找网络打印机”，在右边“主机”中输入server的ip地址，然后点击“查找”。  
- 4 可以看到已经查找到网络打印机，单击右下角“连接”按钮，出现“IPP”选项，选择“队列”名为：/printers/HP-LaserJet-M1522nf-MFP的“IPP”。
-
-##扫描仪
-关于HP扫描仪，通过与launchpad.net（hplip） 技术人员沟通知悉，hplip扫描的插件不支持mipsel架构，所以龙芯下不能扫描。  
-详见：https://answers.launchpad.net/hplip/+question/198640
-
-
-
