@@ -1,11 +1,22 @@
 @media screen and (min-device-width: 901px) {
 /**page 页面包含header/main/footer*/
 	#page{
-		width: 900px;
+		width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
 	}
+	#sidebar {
+		width: 200px;
+		background-color: #FFFFFF;
+		border: 1px solid #CCCCCC;
+		padding-top: 1em;
+		padding-bottom: 2em;
+		padding-left: 3%;
+		padding-right: 3%;
+		float: right;
+	}
 	#main,#footer {
+		width: 670px;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
@@ -95,7 +106,7 @@ body {
 	background-color: #e8e8e8;
 	word-wrap: break-word;
 	word-break: normal;
-	color: #494949;
+	color: #333333;
 /*
 	background: -webkit-linear-gradient(left, #dfeead 12%,#ebf8c2 36%,#ebf8c2 62%,#dfeead 95%);
 */
