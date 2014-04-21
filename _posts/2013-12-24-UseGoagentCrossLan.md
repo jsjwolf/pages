@@ -49,51 +49,49 @@ goagent-v3.1.1-35目前最新发布的稳定版，[下载地址](https://nodeloa
 
 ###1. 解压程序包
 解压goagent-goagent-v3.1.1-35-g0cb031b.zip，目录结构：
-```
-$ tree goagent-v3.1.1-35/ -L 1
-goagent-v3.1.1-35/
-├── local    
-├── README.md
-└── server
-```
+
+	$ tree goagent-v3.1.1-35/ -L 1
+	goagent-v3.1.1-35/
+	├── local    
+	├── README.md
+	└── server
 
 ###2. 上传goagent服务端代码
 本文推荐上传php版（即goagent-v3.1.1-35/server/php/index.php），上传地址从“建立BAE应用流程”第五步中获得；BAE支持两种方式上传代码：打包上传和git/SVN上传，根据情况选择上传方式。默认的代码有BUG，解决方法请查看本文最后的注意。 
 
 ###3. 配置goagent本地端
 修改配置文件"goagent-v3.1.1-35/local/proxy.ini"，使PHP一节的内容如下(**fetchserver的值请从“建立BAE应用流程”第四步中获得**)：  
-```
-[php]
-enable = 1
-password = 123456
-crlf = 0
-validate = 0
-listen = 127.0.0.1:8088
-fetchserver = **http://xxxx.duapp.com/index.php**
-usehosts = 1
-```
+ 
+	[php]
+	enable = 1
+	password = 123456
+	crlf = 0
+	validate = 0
+	listen = 127.0.0.1:8088
+	fetchserver = **http://xxxx.duapp.com/index.php**
+	usehosts = 1
+ 
 
 ###4. 运行goagent本地客户端  
 Linux系统下运行方法：
-```
-sudo python goagent-v3.1.1-35/local/proxy.py    
-```
-Windows直接双击运行：goagent-v3.1.1-35/local/goagent.exe  
-成功运行类似如下输出：
-```
-------------------------------------------------------
-GoAgent Version    : v3.1.1 (python/2.7.3 pyopenssl/0.12)
-Listen Address     : 127.0.0.1:8087
-Debug INFO         : 1
-GAE Mode           : https
-GAE Profile        : google_hk
-GAE APPID          : xxxxxxx
-Pac Server         : http://127.0.0.1:8086/proxy.pac
-Pac File           : file:///home/good/goagent-v3.0.8-61/local/proxy.pac
-**PAAS Listen        : 127.0.0.1:8088**
-**PAAS FetchServer   : http://xxxxx.duapp.com/index.php**
-------------------------------------------------------
-```
+ 
+	sudo python goagent-v3.1.1-35/local/proxy.py    
+ 
+Windows直接双击运行：goagent-v3.1.1-35/local/goagent.exe，成功运行类似如下输出：
+ 
+	------------------------------------------------------
+	GoAgent Version    : v3.1.1 (python/2.7.3 pyopenssl/0.12)
+	Listen Address     : 127.0.0.1:8087
+	Debug INFO         : 1
+	GAE Mode           : https
+	GAE Profile        : google_hk
+	GAE APPID          : xxxxxxx
+	Pac Server         : http://127.0.0.1:8086/proxy.pac
+	Pac File           : file:///home/good/goagent-v3.0.8-61/local/proxy.pac
+	**PAAS Listen        : 127.0.0.1:8088**
+	**PAAS FetchServer   : http://xxxxx.duapp.com/index.php**
+	------------------------------------------------------
+ 
 
 ##第三步：配置浏览器代理
 代理地址为：127.0.0.1:8088，可以通过直接配置浏览器代理使用，也可通过浏览器插件来使用代理，插件可根据访问的地址智能判断是否需要代理。  
@@ -108,9 +106,9 @@ IE/Opera及其他 用户请使用 IE 代理。
 ##补充几点
 1. goagent本地与代理服务器之间连接使用弱加密，尤其是https，在涉及网银密码等信息时，谨防泄漏密码。    
 2. 默认的Goagent代理服务器端php代码有缺陷，要在最后加上一行：
-	```
-	?>
-	```
+	 
+	<pre><code>?></code></pre>
+	 
 
 ##参考
 详细参考：[https://code.google.com/p/goagent/](https://code.google.com/p/goagent/)  

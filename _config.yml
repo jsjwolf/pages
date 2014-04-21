@@ -16,6 +16,8 @@ future:      true
 lsi:         false
 pygments:    false
 markdown:    kramdown 
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+textile_ext:   textile
 
 maruku:
   use_tex:    false
@@ -44,3 +46,4 @@ kramdown:
     coderay_tab_width: 4
     coderay_bold_every: 10
     coderay_css: style
+

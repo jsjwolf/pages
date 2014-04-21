@@ -99,6 +99,7 @@ Ubuntu系统服务管理和配置实现特殊，所以Linux通用的服务管理
 	gooo     pts/0    :0               三15   23:57   9.24s  9.01s /usr/bin/firefox
 
 说明：
+
 - 系统当前时间：15:09:17
 - 系统已运行时间：23:18
 - 系统平均负载：0.77, 0.59, 0.63 （over the last 1, 5 and 15 minutes）
@@ -221,13 +222,12 @@ Redhat系列发行版（Fedora/RHEL）提供RPM包数据校验功能，通过文
 
 	$ rpm -Va 
 
-校验指定指定软件包initscripts：
+校验指定指定软件包initscripts，扫描结果显示：initscripts包中的文件/etc/rc.d/rc.local与初始版本内容不一致。
 
 	$ rpm -Va initscripts
 
 	S.5......  c /etc/rc.d/rc.local
 
-- 上例扫描结果：initscripts包中的文件/etc/rc.d/rc.local与初始版本内容不一致。
 
 校验指定文件
 
