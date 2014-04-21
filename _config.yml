@@ -15,8 +15,7 @@ feed:      /atom.xml
 future:      true
 lsi:         false
 pygments:    false
-markdown:    kramdown 
-markdown_ext:  markdown,mkdown,mkdn,mkd,md
+markdown:    maruku 
 textile_ext:   textile
 
 maruku:
