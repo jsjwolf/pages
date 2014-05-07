@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<<html xmlns:wb="http://open.weibo.com/wb">>
   <head>
     <meta charset="utf-8" />
     <!--自适应屏幕-->
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <link media="all" rel="stylesheet" href="/style/style.css" />
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
     <meta name="copyright" content="{{ site.url }}" />
     <meta name="keywords" content="{{ page.keywords }}" />
     <meta name="description" content="{{ page.description }}" />
@@ -38,10 +39,8 @@
   <div id="page" class="background">
     <div id="sidebar" >
         <div id="me" >
-         	<p>自我介绍 </p>
-        </div>
-        <div id="list" >
-         	<p>文章列表 </p>
+		<img src="/images/melogo-100.png" width="90">
+		<span id="subWB" ><wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button></span>
         </div>
     </div>
     <div id="main">
