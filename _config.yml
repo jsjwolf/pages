@@ -46,3 +46,6 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: style
 
+
+media: "/images"
+siteurl: "http://goodbai.com"
