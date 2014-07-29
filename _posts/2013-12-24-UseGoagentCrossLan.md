@@ -1,16 +1,16 @@
 ---
 layout: post
-subject: '利用BAE搭建Goagent代理服务突破内网封锁'
-category: 'secure'
-tags: '代理 翻墙'
-keywords: '网络行为管理,Goagent PAAS,BAE搭建代理'
+subject: 利用BAE搭建Goagent代理服务突破内网封锁
+category: secure
+tags: 代理 翻墙
+keywords: "网络行为管理,Goagent PAAS,BAE搭建代理"
 sharing: true
 comment: true
-alias: 
+alias: null
 published: true
-highlight: yes
+highlight: "yes"
 postimg_s: /images/artist/skip_200x133.jpg
-description: '前阵子微博上看到一句话：“他们不知道内网开发的痛苦”，深表同情。许多企业内部通过<b>上网行为管理系统</b>限制访问部分网站，比如像[Ubutnu中文论坛]也在某公司禁止之列，作为一名geek怎可忍受！'  
+description: "前阵子微博上看到一句话：“他们不知道内网开发的痛苦”，深表同情。许多企业内部通过<b>上网行为管理系统</b>限制访问部分网站，比如像[Ubutnu中文论坛]也在某公司禁止之列，作为一名geek怎可忍受！"
 ---
 
 上网行为管理实现方法很多，但基本原理是在网关处增加包过滤机制，根据域名/IP、端口、协议等来确定是否允许访问通过，了解了这个突破封锁就好办，我们要：  
@@ -110,11 +110,15 @@ IE/Opera及其他 用户请使用 IE 代理。
 	<pre><code>?></code></pre>
 	 
 
+##更新2014-07-29
+打开部分网站时报错：error xxx （Too many open files'）  
+原因是Linux默认进程打开文件数限制太小的原因，我的调到4096后问题解决，参考命令：
+
+	$ ulimit -n 4096
+
 ##参考
 详细参考：[https://code.google.com/p/goagent/](https://code.google.com/p/goagent/)  
 FAQ：[https://code.google.com/p/goagent/wiki/FAQ](https://code.google.com/p/goagent/wiki/FAQ)  
 
 全文完
 2013-12-24
-
-
